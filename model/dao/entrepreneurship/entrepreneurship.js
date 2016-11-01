@@ -72,14 +72,15 @@ $dao["entrepreneurship"]["submitEntrepreneurship"]=function(strUserID,objEntrepr
     insertObj['left_time'] = (insertObj['incubation_period']-insertObj['dt_publish'])>0?insertObj['incubation_period']-insertObj['dt_publish']:0;
     try{
         insertObj['posts'] = JSON.parse(objEntrepreneurship['posts']||'[]');
+        console.log(objEntrepreneurship['posts'])
     }
     catch (err){
         insertObj['posts']=[];
     }
-
     if(objEntrepreneurship['broadcast_type']==1){
        insertObj['groups'] = objEntrepreneurship['groups']||[]
     }
+    var posts_id_list=[];
     insertObj['sign_secrecy'] = insertObj['sign_secrecy']||1;
     insertObj["userid"]=strUserID
     async.waterfall([
@@ -88,7 +89,11 @@ $dao["entrepreneurship"]["submitEntrepreneurship"]=function(strUserID,objEntrepr
                 if(err){
                     cb({errcode:1000},null)
                 }else{
-                    insertObj["_id"]=insertResult["insertedId"]
+                    insertObj["_id"]=insertResult["insertedId"];
+                    for(var i=0;i<insertObj['posts'].length;i++){
+                        insertObj['posts'][i].id=insertObj["_id"]+i;
+                        posts_id_list.push(insertObj['posts'][i].id)
+                    }
                     cb(null,insertObj)
                 }
             })
@@ -99,7 +104,10 @@ $dao["entrepreneurship"]["submitEntrepreneurship"]=function(strUserID,objEntrepr
                funcCb(err["errcode"],null)
            })
         }else{
-            funcCb(0,{"code":0,"message":"success","_id":insertObj['_id']})
+            funcCb(0,{"code":0,"message":"success",data:{
+                "_id":insertObj['_id'],
+                "posts_id_list":posts_id_list
+            }})
         }
     })
 }
@@ -147,6 +155,7 @@ $dao["entrepreneurship"]["listEntrepreneurship"]=function(funcCb){
         }else{
             var arr =[];
             for(var key in objResult){
+                objResult[key].posts.forEach(function(v,i){v.id=i})
                 arr.push(objResult[key])
             }
 
