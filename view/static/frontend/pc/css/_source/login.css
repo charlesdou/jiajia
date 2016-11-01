@@ -1,0 +1,62 @@
+.wrapper { background: url(../images/login/loginBg.jpg) center center no-repeat; height: 780px; overflow: hidden; }
+.wrapper .main { padding: 210px 0 0 0; }
+.wrapper .loginBox { background: url(../images/login/loginConBg.png) 0 0 no-repeat; width: 747px; height: 361px; margin: 0 auto; overflow: hidden; display: block; }
+.wrapper .loginBox .iLine { width: 1px; height: 200px; float: left; overflow: hidden; font-size: 0; line-height: 0; background: #d5d5d5; margin-top: 80px; margin: 80px 0 0 80px; display: inline; }
+
+.loginForm { width: 300px; float: left; padding: 10px 0 0 40px; }
+.loginForm dt { font-size: 24px; line-height: 54px; height: 54px; text-align: center; }
+.loginForm dd { padding: 0 0 0 110px; margin-top: 10px; position: relative; }
+.loginForm dd .sTit { width: 95px; text-align: right; padding-right: 15px; line-height: 34px; height: 34px; position: absolute; top: 0; left: 0; }
+.loginForm dd .codeTxt { padding-right: 100px; }
+.loginForm dd .codeTxt .sendCodeBtn { width: 90px; height: 34px; line-height: 34px; position: absolute; top: 0; right: 0; background: #d7d4c7; color: #333; text-align: center; font-size: 12px; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; }
+.loginForm dd .codeTxt .sCode { position: absolute; top: 0; right: 0; width: 90px; }
+.loginForm dd .codeTxt .sCode .iPic { width: 66px; height: 28px; display: block; float: left; overflow: hidden; margin: 3px 0 0 0; display: inline; }
+.loginForm dd .codeTxt .sCode .iPic img { width: 100%; height: 100%; display: block; }
+.loginForm dd .codeTxt .sCode .aRefresh { width: 24px; height: 24px; overflow: hidden; float: left; text-align: center; line-height: 24px; color: #527a0b; margin: 5px 0 0 0; display: inline; transition: transform 0.5s; -moz-transition: transform 0.5s; -webkit-transition: transform 0.5s; -ms-transition: transform 0.5s; -o-transition: transform 0.5s; }
+.loginForm dd .codeTxt .sCode .aRefresh:hover { transform: rotate(360deg); -moz-transform: rotate(360deg); -webkit-transform: rotate(360deg); -ms-transform: rotate(360deg); -o-transform: rotate(360deg); }
+.loginForm dd .txtInput { border: 1px solid #bfbfbf; padding: 0 10px; display: block; line-height: 32px; height: 32px; background: #fff; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; }
+.loginForm dd .txtInput input { width: 100%; border: 0 none; background: none; line-height: 24px; height: 24px; padding: 4px 0; }
+.loginForm dd .sCheckBox { line-height: 30px; height: 30px; overflow: hidden; display: block; padding: 5px 0; }
+.loginForm dd .sCheckBox input { float: left; width: 14px; height: 14px; margin: 8px 5px 0 0; display: inline; }
+.loginForm dd .pFun { padding: 10px 0 0 0; }
+.loginForm dd .pFun .sCheckBox { float: left; width: auto; font-size: 12px; }
+.loginForm dd .pFun .forgetBtn { font-size: 12px; float: right; line-height: 40px; height: 40px; color: #006ab3; }
+.loginForm dd .pFun .forgetBtn:hover { color: #cc3742; }
+
+.loginRight { float: left; width: 300px; }
+.loginRight .hasAccountNumber { line-height: 36px; height: 36px; text-align: center; }
+.loginRight .hasAccountNumber span { font-size: 14px; padding: 135px 0 15px; display: block; }
+.loginRight .hasAccountNumber .loginBtn { width: 100px; margin: 0 auto; }
+.loginRight .otherLogin { text-align: center; }
+.loginRight .otherLogin a { color: #006ab3; }
+.loginRight .otherLogin a:hover { color: #cc3742; }
+.loginRight .otherLogin .sTit { padding: 140px 0 0 0; line-height: 30px; height: 30px; overflow: hidden; display: block; }
+.loginRight .otherLogin .otherLogin { padding: 10px 0 0 0; }
+.loginRight .otherLogin .otherLogin span { display: block; line-height: 24px; height: 24px; overflow: hidden; text-align: left; padding-left: 85px; }
+.loginRight .otherLogin .otherLogin span a { float: left; }
+.loginRight .otherLogin .otherLogin span a img { float: left; width: 24px; height: 24px; }
+
+.findPassword { background: none; height: auto; }
+.findPassword .main { padding: 10px 0 0 0; }
+.findPassword .mod_a .th_a { line-height: 62px; height: 62px; text-align: center; padding: 30px 0; border-bottom: 2px solid #dadada; }
+.findPassword .mod_a .th_a .sMark { float: none; display: inline-block; font-size: 30px; }
+.findPassword .mod_a .tb_a { padding: 30px; }
+.findPassword .iLock { background: url(../images/login/findPassword.png) -461px 0 no-repeat; width: 39px; height: 62px; display: inline-block; overflow: hidden; vertical-align: top; margin-right: 20px; }
+.findPassword .pStep span { width: 220px; height: 36px; line-height: 36px; position: relative; float: left; color: #f37400; background: #ffe47b; font-size: 16px; }
+.findPassword .pStep span em { width: 50px; text-align: center; float: left; }
+.findPassword .pStep span .iArrow { background: url(../images/login/findPassword.png) -17px 0 no-repeat; position: absolute; top: 0; right: 0; width: 16px; height: 36px; overflow: hidden; }
+.findPassword .pStep span.cur { color: #fff; background: #ffcc01; }
+.findPassword .pStep span.cur .iArrow { background-position: -34px 0; }
+.findPassword .pStep span.curA { color: #fff; background: #ffcc01; }
+.findPassword .pStep span.curA .iArrow { background-position: 0 0; }
+.findPassword .dlForm { width: 280px; padding: 20px 0 0 0; }
+.findPassword .dlForm dt { font-size: 16px; line-height: 50px; height: 50px; }
+.findPassword .dlForm dd { padding: 0 0 20px 0; }
+.findPassword .dlForm dd .global_input { line-height: 34px; height: 34px; }
+.findPassword .dlForm dd .global_input input { padding: 6px 0; color: #999; font-size: 14px; }
+.findPassword .dlForm dd.code { padding-right: 160px; position: relative; }
+.findPassword .dlForm dd.code .sCode { position: absolute; top: 0; right: 0; line-height: 36px; }
+.findPassword .dlForm dd.code .sCode em { border: 1px solid #dddddd; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; width: 86px; height: 34px; float: left; overflow: hidden; }
+.findPassword .dlForm dd.code .sCode em img { width: 100%; height: 100%; display: block; vertical-align: top; }
+.findPassword .dlForm dd.code .sCode a { float: left; color: #f37400; font-size: 12px; margin: 0 0 0 10px; display: inline; }
+.findPassword .dlForm dd .globalBtn_42 { width: 100px; display: block; }

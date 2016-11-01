@@ -1,0 +1,35 @@
+{
+  "description": "投票",
+  "protocol": "",
+  "method": "post",
+  "path": "votepost/:weiboid",
+  "params": {
+    "weiboid": "5800fdab94bbd54e3af389e5"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "options": [
+      "5800fdab94bbd54e3af389e6",
+      "5800fdab94bbd54e3af389e7"
+    ]
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": [
+    {
+      "_id": "5800fdab94bbd54e3af389e6",
+      "count": 1
+    },
+    {
+      "_id": "5800fdab94bbd54e3af389e7",
+      "count": 1
+    },
+    {
+      "_id": "5800fdab94bbd54e3af389e8",
+      "count": 0
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "mongodb_url":"mongodb://127.0.0.1:27017/maindb",
+  "redis_ip":"127.0.0.1",
+  "redis_port":6379,
+  "static_server_url":"http://static.sunrisin.com:9000",
+  "listen_app_port":8088,
+  "server_ip":"www.sunrisin.com",
+  "verification_code_expire":600000,
+  "log_url":"mongodb://127.0.0.1:27017/log"
+}

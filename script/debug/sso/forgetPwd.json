@@ -1,0 +1,20 @@
+{
+  "description": "忘记密码",
+  "protocol": "",
+  "method": "put",
+  "path": "mobile/password2",
+  "params": {},
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "id": "13917618429",
+    "password": "doudou1",
+    "identifyingcode": "384612",
+    "purpose": 1
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

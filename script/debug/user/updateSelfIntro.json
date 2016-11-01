@@ -1,0 +1,19 @@
+{
+  "description": "更改自我介绍",
+  "protocol": "",
+  "method": "put",
+  "path": "resume/:resumeid/selfdescription",
+  "params": {
+    "resumeid": "57e22e469dcb6b9d615d1ac1"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "selfdescription": "热爱生活，工作有激情，酷爱编程，对一切计算机科学与互联网领域的新鲜事物愿意学习与尝试，是一个重度极客。"
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

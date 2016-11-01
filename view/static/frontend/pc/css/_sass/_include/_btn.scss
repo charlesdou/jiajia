@@ -1,0 +1,57 @@
+.globalBtn{
+	background: #cc3742;
+	color: #fff;
+	text-align: center;
+	display: block;
+	@include setBorderRadius;
+	&:hover{
+		background: #{$hover_link_color};
+		color: #333;
+		text-decoration: none;
+	}
+}
+
+.globalBtn_62{
+	font-size: 24px;
+	line-height: 62px;
+	height: 62px;
+}
+
+.globalBtn_46{
+	line-height: 46px;
+	height: 46px;
+	font-size: 18px;
+}
+
+.globalBtn_42{
+	font-size: 16px;
+	line-height: 42px;
+	height: 42px;
+}
+
+.globalBtn_42_2{
+	padding: 3px 0;
+	line-height: 18px;
+	em{
+		display: block;
+	}
+}
+
+.globalArrowBtn{
+	background: url(#{$global_map}) -465px 13px no-repeat;
+	width: 44px;
+	height: 44px;
+	overflow: hidden;
+	display: block;
+	@include setCssAttr("transition","transform 0.2s");
+	&:hover{
+		text-decoration: none;
+	}
+}
+
+.cur{
+	.globalArrowBtn{
+		@include setCssAttr("transform","rotate(180deg)");
+		filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+	}
+}

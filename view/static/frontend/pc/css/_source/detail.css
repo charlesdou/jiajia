@@ -1,0 +1,70 @@
+.pEdit { padding: 10px 60px 0 35px; }
+.pEdit .editBtn { float: right; width: 120px; }
+
+.pDetailBtn { padding: 30px 0 0 0; }
+
+.fileList { padding: 20px 0 10px; }
+.fileList span { float: left; line-height: 30px; height: 30px; overflow: hidden; font-size: 16px; padding-right: 30px; }
+.fileList span a, .fileList span em { float: left; height: 30px; overflow: hidden; color: #333; }
+.fileList span a:hover, .fileList span em:hover { color: #333; }
+.fileList span a.aClose { float: left; margin-left: 5px; display: inline; text-align: center; width: 30px; height: 30px; overflow: hidden; }
+.fileList span a.aClose .iconfont { font-size: 16px; height: 30px; width: 30px; line-height: 30px; cursor: pointer; color: #cc3742; }
+.fileList span a.aClose:hover .iconfont { color: #ffcc01; }
+
+.formList { padding: 30px 40px; }
+.formList li { position: relative; padding-left: 195px; padding-top: 15px; }
+.formList li .sName { position: absolute; width: 185px; line-height: 64px; height: 64px; overflow: hidden; text-align: right; top: 15px; left: 0; font-size: 20px; }
+.formList li .txt .sTit { display: block; line-height: 50px; height: 50px; font-size: 24px; text-align: center; }
+
+.jobDetailCon { padding: 90px 0 40px; margin-top: 50px; position: relative; }
+.jobDetailCon .sJobName { line-height: 76px; padding: 0 30px 0 40px; font-size: 28px; display: block; position: absolute; top: -5px; left: 35px; background: #ffcc01; border-radius: 2px; -moz-border-radius: 2px; -webkit-border-radius: 2px; -ms-border-radius: 2px; -o-border-radius: 2px; }
+.jobDetailCon .pFunList { position: absolute; top: 30px; left: 510px; height: 28px; overflow: hidden; }
+.jobDetailCon .pFunList a { width: 28px; height: 28px; line-height: 28px; float: left; overflow: hidden; font-size: 18px; text-align: center; background: #c9cccb; margin-right: 8px; display: inline; border-radius: 2px; -moz-border-radius: 2px; -webkit-border-radius: 2px; -ms-border-radius: 2px; -o-border-radius: 2px; }
+.jobDetailCon .pFunList a .iconfont { font-size: 20px; width: 28px; height: 28px; display: block; }
+.jobDetailCon .pFunList a:hover { color: #fff; }
+.jobDetailCon .jobIntroList { padding: 0 5px; }
+.jobDetailCon .jobIntroList li { margin-top: -1px; border-top: 1px solid #f3f3f3; padding: 0 30px; }
+.jobDetailCon .jobIntroList li .pLabel { line-height: 46px; height: 46px; }
+.jobDetailCon .jobIntroList li .pLabel span { float: left; margin-right: 20px; font-size: 24px; color: #666; }
+.jobDetailCon .jobIntroList li .pLabel span .iconfont { float: left; line-height: 46px; font-size: 18px; height: 46px; padding-right: 5px; }
+.jobDetailCon .jobIntroList li .pLabel span .red { color: #cc3742; }
+.jobDetailCon .jobIntroList li .pTips { padding: 8px 0; line-height: 30px; color: #666; font-size: 24px; }
+.jobDetailCon .jobIntroList li .pDes { color: #999; line-height: 36px; height: 36px; }
+.jobDetailCon .jobIntroList li .pDes em { font-size: 16px; padding-right: 20px; }
+.jobDetailCon .jobIntroList li .pDes span { float: left; }
+.jobDetailCon .jobIntroList li .pDes span.sTime { padding-right: 220px; }
+.jobDetailCon .jobIntroList li .dataTable { padding: 30px 0; }
+.jobDetailCon .jobIntroList li .dataTable table { width: 100%; }
+.jobDetailCon .jobIntroList li .dataTable table td { width: 50%; line-height: 24px; }
+.jobDetailCon .jobIntroList li .dlDescription { color: #666; }
+.jobDetailCon .jobIntroList li .dlDescription dt { padding: 10px 0; line-height: 30px; height: 30px; font-size: 16px; }
+.jobDetailCon .jobIntroList li .dlDescription dd { line-height: 20px; padding-bottom: 30px; }
+.jobDetailCon .jobIntroList li.liPadding { padding-right: 200px; position: relative; }
+.jobDetailCon .jobIntroList li.liPadding .globalBtn { position: absolute; top: 0; right: 60px; width: 120px; }
+
+.resumeDetail { padding: 30px 40px; }
+.resumeDetail .personInfor { line-height: 36px; font-size: 18px; }
+.resumeDetail .moreInfor { line-height: 24px; padding: 0 0 20px 10px; text-indent: 2em; }
+
+.itemDataCon { padding: 30px 40px; }
+.itemDataCon .sTit { line-height: 50px; height: 50px; display: block; text-align: center; font-size: 24px; }
+.itemDataCon .tableData { padding: 10px 0 0 0; }
+.itemDataCon .tableData table { width: 100%; }
+.itemDataCon .tableData table th, .itemDataCon .tableData table td { line-height: 36px; height: 36px; font-size: 20px; }
+.itemDataCon .tableData table .cycle { width: 25%; text-align: left; }
+.itemDataCon .tableData table .money { width: 50%; text-align: center; }
+.itemDataCon .tableData table .time { text-align: center; }
+.itemDataCon .txt { padding: 20px 0 0 0; line-height: 24px; font-size: 16px; }
+.itemDataCon .txt p { text-indent: 2em; }
+
+.editSuccess { padding: 90px 0; }
+.editSuccess .sTit { display: block; line-height: 30px; width: 610px; text-align: center; padding: 80px 0; background: #fff; margin: 0 auto; }
+.editSuccess .sTit em { color: #cc3742; }
+
+.publicInterestDetail { border: 1px solid #d5d5d5; }
+.publicInterestDetail .pTit { border-bottom: 1px solid #d5d5d5; line-height: 36px; padding: 32px 0; text-align: center; font-size: 22px; }
+.publicInterestDetail .txt { padding: 30px 20px 30px 70px; border-bottom: 1px solid #d5d5d5; }
+.publicInterestDetail .txt li { float: left; width: 49%; line-height: 42px; height: 42px; overflow: hidden; }
+.publicInterestDetail .txt li .mapBtn { float: left; padding: 0 30px; }
+.publicInterestDetail .con { padding: 50px 0; width: 616px; margin: 0 auto; overflow: hidden; }
+.publicInterestDetail .con img { vertical-align: top; display: block; }

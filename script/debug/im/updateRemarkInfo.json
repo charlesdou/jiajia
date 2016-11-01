@@ -1,0 +1,29 @@
+{
+  "description": "修改好友备注信息",
+  "protocol": "",
+  "method": "put",
+  "path": "friend/remarkinfo/:userid",
+  "params": {
+    "userid": "57e23a80e97b4ca1623462dc"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "remarkname": "韦峰",
+    "phones": [
+      "13868900761",
+      "15988763276",
+      "13899076549"
+    ],
+    "labels": [
+      "兄弟",
+      "大学同学"
+    ],
+    "more_description": ""
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

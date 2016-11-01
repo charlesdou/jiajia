@@ -1,0 +1,39 @@
+{
+  "description": "获取好友详细信息",
+  "protocol": "",
+  "method": "get",
+  "path": "friend/:userid",
+  "params": {
+    "userid": "57e23a80e97b4ca1623462dc"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "remarkname": "韦峰",
+    "isStarred": false,
+    "isTopped": false,
+    "isNonDisturb": false,
+    "notVisitWeibo": false,
+    "notAllowedVisitWeibo": false,
+    "phones": [
+      "13868900761",
+      "15988763276",
+      "13899076549"
+    ],
+    "labels": [
+      "兄弟",
+      "大学同学"
+    ],
+    "more_description": "",
+    "nickname": "小色狼",
+    "name": "韦峰",
+    "university": "上海应用技术学院",
+    "majority": "计算机科学技术与信息工程",
+    "province": "上海"
+  }
+}

@@ -1,0 +1,21 @@
+$global_img: "../images";
+$global_version: "?v=20160508";
+$global_map: "../images/globalMap.png";
+$global_iconfont_url: "../iconfont";
+$global_iconfont_version: "?v=20160515";
+
+$global_default_color: #333;
+$default_link_color: #fff;
+$hover_link_color: #ffcc01;
+
+$popWin_index:600;
+
+@mixin setBorderRadius(){
+ 	@include setCssAttr("border-radius","3px");
+}
+
+@mixin setGlobalWidth(){
+ 	min-width: 940px;
+	max-width: 1600px;
+	margin: 0 auto;
+}

@@ -1,0 +1,29 @@
+{
+  "description": "用户注册",
+  "protocol": "",
+  "method": "post",
+  "path": "mobile/registration",
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "id": "13671910611",
+    "password": "weifeng",
+    "identifyingcode": "624178",
+    "purpose": 0
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "username": "13671910611",
+    "password": "weifeng",
+    "dt_lastLogin": 1474443904363,
+    "dt_registration": 1474443904363,
+    "logintype": 0,
+    "nickname": "136****0611",
+    "img_headportrait": "",
+    "_id": "57e23a80e97b4ca1623462dc",
+    "sessionid": "jiajia.user.session.4f1d58e0-7fcf-11e6-ac1b-6316572605e8"
+  }
+}

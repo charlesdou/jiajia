@@ -1,0 +1,21 @@
+{
+  "description": "修改简历照片",
+  "protocol": "",
+  "method": "put",
+  "path": "resume/:resumeid/headportrait",
+  "params": {
+    "resumeid": "57e22e469dcb6b9d615d1ac1"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "form",
+  "req_body": {
+    "img_headportrait": "./multimedia/3.png"
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "img_headportrait": "/home/57e1530abef390d05e294797/20160921/upload_3857c3d0a626faf01f9fb4b69b82c14b.png"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "description": "同步通讯录",
+  "protocol": "",
+  "method": "get",
+  "path": "contacts",
+  "params": {},
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "friends": [
+      {
+        "_id_friend": "57e239f6e97b4ca1623462db",
+        "friend_nickname": "小恶魔",
+        "friend_headportrait": "/home/57e239f6e97b4ca1623462db/20160921/upload_a8b6b1ef01e9eb54a279be959658f527.jpg"
+      },
+      {
+        "_id_friend": "57e23a80e97b4ca1623462dc",
+        "friend_nickname": "小色狼",
+        "friend_headportrait": "/home/57e23a80e97b4ca1623462dc/20160921/upload_ffc7668579fbb8a3df4965e1794ad77d.jpg"
+      }
+    ],
+    "groups": [
+      {
+        "_id": "57e26c47ecfdc924650238b9",
+        "groupname": "晟海网络科技",
+        "desc": "公司内部群",
+        "maxusers": 500,
+        "img_logo": "/home/57e1530abef390d05e294797/20160921/upload_5d133651beeccc5406e29db4bc118527.jpg",
+        "_id_owner": "57e1530abef390d05e294797",
+        "group_imid": "244348389100093868",
+        "members": 3
+      },
+      {
+        "_id": "57e26c92ecfdc924650238bb",
+        "groupname": "加加网赶工组",
+        "desc": "大家加油，赶快赶工",
+        "maxusers": 300,
+        "img_logo": "/home/57e1530abef390d05e294797/20160921/upload_4ad10063bc11849cac61be45756c5478.jpg",
+        "_id_owner": "57e1530abef390d05e294797",
+        "group_imid": "244348711411384744",
+        "members": 1
+      }
+    ]
+  }
+}

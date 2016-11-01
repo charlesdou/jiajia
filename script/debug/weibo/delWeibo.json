@@ -1,0 +1,17 @@
+{
+  "description": "删除微博",
+  "protocol": "",
+  "method": "delete",
+  "path": ":weiboid",
+  "params": {
+    "weiboid": "57e61b15387f4aad6da978b2"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

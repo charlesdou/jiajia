@@ -1,0 +1,45 @@
+.sheader{
+	line-height: rem-calc(80px);
+	font-size: rem-calc(24px);
+	position: relative;
+	z-index: #{$global_header_zindex};
+	background: #c9333f;
+	height: rem-calc(80px);
+	p{
+		position: relative;
+		z-index: 10;
+		&.pLeft{
+			float: left;
+			a{
+				color: #fff;
+			}
+			.iconfont{
+				color: #fff;
+			}
+		}
+		&.pRight{
+			float: right;
+			padding-right: rem-calc(20px);
+			.aSend{
+				line-height: rem-calc(42px);
+				height: rem-calc(42px);
+				border: 1px solid #fff;
+				color: #fff;
+				padding: 0 rem-calc(12px);
+				@include setCssAttr("border-radius",rem-calc(3px));
+				float: left;
+				margin-top: rem-calc(16px);
+			}
+		}
+	}
+	.sTit{
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		text-align: center;
+		z-index: 1;
+		color: #fff;
+		font-size: rem-calc(32px);
+	}
+}

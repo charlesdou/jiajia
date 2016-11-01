@@ -1,0 +1,63 @@
+.mod{
+	.th{
+		text-align: center;
+		position: relative;
+		height: 60px;
+		line-height: 60px;
+		overflow: hidden;
+		.sMark{
+			color: #c32330;
+			font-size: 18px;
+			background: #fafafa;
+			position: relative;
+			z-index: 10;
+			display: inline-block;
+			margin: 0 auto;
+			padding: 0 10px;
+		}
+		i.iLine{
+			width: 100%;
+			height: 1px;
+			background:#aaa;
+			overflow: hidden;
+			font-size: 0;
+			line-height: 0;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			z-index: 5;
+		}
+	}
+}
+
+.mod_a{
+	.th_a{
+		line-height: 50px;
+		height: 50px;
+		span{
+			float: left;
+			&.sTit,&.sMark{
+				font-size: 20px;
+			}
+			.iLine{
+				float: left;
+				background:#cc3742;
+				width: 5px;
+				height: 20px;
+				margin-right: 10px;
+				margin-top: 15px;
+				display: inline;
+			}
+		}
+		.pBtn{
+			float: right;
+			padding: 4px 0 0 0;
+			a{
+				margin-left: 10px;
+				display: inline;
+				float: left;
+				width: 130px;
+			}
+		}
+	}
+}

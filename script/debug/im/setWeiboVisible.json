@@ -1,0 +1,19 @@
+{
+  "description": "开启或关闭不看他的微博",
+  "protocol": "",
+  "method": "put",
+  "path": "friend/weibovisible/:friendid",
+  "params": {
+    "friendid": "57e239f6e97b4ca1623462db"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "notVisitWeibo": false
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

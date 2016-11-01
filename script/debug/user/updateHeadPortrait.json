@@ -1,0 +1,17 @@
+{
+  "descripition": "更改头像",
+  "protocol": "",
+  "method": "put",
+  "path": "headportrait",
+  "params": {},
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "form",
+  "req_body": {
+    "img_headportrait": "./multimedia/1.jpg"
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

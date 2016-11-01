@@ -1,0 +1,19 @@
+{
+  "description": "开启或者关闭不让他看我的微博",
+  "protocol": "",
+  "method": "put",
+  "path": "friend/weiboallowed/:friendid",
+  "params": {
+    "friendid": "57e239f6e97b4ca1623462db"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "notAllowedVisitWeibo": false
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

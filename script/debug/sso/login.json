@@ -1,0 +1,36 @@
+{
+  "description": "用户登录",
+  "protocol": "",
+  "method": "post",
+  "path": "mobile/login",
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "id": "13917618429",
+    "password": "doudou"
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "_id": "57ea1580411b41cc395f8f25",
+    "username": "13917618429",
+    "password": "doudou",
+    "dt_lastLogin": 1476463143956,
+    "dt_registration": 1474958720220,
+    "logintype": 0,
+    "nickname": "超能程序猿",
+    "img_headportrait": "http://static.sunrisin.com:9000/home/57ea1580411b41cc395f8f25/20161010/upload_f845fc0d53a870abe1dbc17b13204552.png",
+    "blog": "www.sunrinsin.com",
+    "qq": "22689352",
+    "signature": "有志者事竟成",
+    "birthday": 19870922,
+    "email": "13917618429@163.com",
+    "sex": 0,
+    "name": "窦晨超",
+    "province": "上海",
+    "age": 29,
+    "sessionid": "jiajia.user.session.b7b35b60-922c-11e6-a1f7-719b18c97111"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "description": "删除简历",
+  "protocol": "",
+  "method": "delete",
+  "path": "resume/:resumeid",
+  "params": {
+    "resumeid": "57c42aa72103c9fa12328850"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

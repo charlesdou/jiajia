@@ -1,0 +1,134 @@
+.offerList{
+	li{
+		background: #eee;
+		width: 290px;
+		height: 280px;
+		overflow: hidden;
+		float: left;
+		.pic{
+			position: relative;
+			width: 290px;
+			overflow: hidden;
+			img{
+				width: 100%;
+				height: 100%;
+				display: block;
+				vertical-align: top;
+			}
+			a,a:hover{
+				display: block;
+				color: #fff;
+			}
+			.pBottom{
+				height: 22px;
+				line-height: 22px;
+				overflow: hidden;
+				position: absolute;
+				bottom:0;
+				left: 0;
+				width: 100%;
+				font-size: 11px;
+				background:rgba(0,0,0,0.5); 
+				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000);
+				.sLeft{
+					float: left;
+					padding-left: 5px;
+				}
+				.sRight{
+					float: right;
+					padding-right: 5px;
+				}
+			}
+		}
+		.txt{
+			padding-left: 5px;
+			position: relative;
+			span{
+				display: block;
+				font-size: 12px;
+				overflow: hidden;
+				line-height: 20px;
+			}
+			.sTit{
+				font-size: 16px;
+				line-height: 24px;
+				height: 24px;
+				padding: 5px 0;
+				.iApprove{
+					display: inline-block;
+					font-size: 11px;
+					background: #cc3742;
+					padding: 0 3px;
+					line-height: 18px;
+					vertical-align: middle;
+					color: #fff;
+					margin-left: 5px;
+					@include setCssAttr("border-radius","5px");
+				}
+			}
+			.sTips{
+				color: #666;
+				line-height: 20px;
+				padding-bottom: 5px;
+				font-size: 14px;
+			}
+			.raiseBtn{
+				position: absolute;
+				top: 10px;
+				right: 0;
+				width: 64px;
+				line-height: 32px;
+				height: 32px;
+				overflow: hidden;
+			}
+			.pBtn{
+				padding: 10px 0 0 0;
+				position: relative;
+				.voteBtn{
+					width: 92px;
+					line-height: 38px;
+					height: 38px;
+					display: block;
+					margin: 0 auto;
+					em{
+						padding-left: 5px;
+					}
+				}
+				.sSignUp{
+					position: absolute;
+					top: 14px;
+					right: 0;
+					border-left: 1px solid #e0e0e0;
+					height: 30px;
+					line-height: 30px;
+					text-align: center;
+					width: 66px;
+					a,em{
+						display: block;
+						font-size: 16px;
+					}
+					a,a:hover{
+						color: #333;
+						text-decoration: none;
+					}
+					em{
+						color: #cc3742;
+					}
+				}
+			}
+		}
+		&.raiseLi{
+			.pic{
+				height: 180px;
+			}
+		}
+		&.voteLi{
+			.pic{
+				height: 120px;
+			}
+		}
+		&:hover{
+			border-color: #{$hover_link_color};
+		}
+	}
+}

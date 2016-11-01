@@ -1,0 +1,24 @@
+{
+  "description": "同步回复",
+  "protocol": "",
+  "method": "post",
+  "path": "sync/replies/:weiboid/:commentid",
+  "params": {
+    "weiboid": "57e630ed3871e2c5fc2ee571",
+    "commentid": "57e644d7fd1019197ff14f42"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "down": false,
+    "dt_sync": 1474709166356,
+    "alreadySynced": [
+      "57e646aeecbf79136866072b"
+    ]
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": []
+}

@@ -1,0 +1,106 @@
+{% extends "../template/common.html" %}
+
+{% block title %}权限页面{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+    function selectGroupAll(id){
+        var node=$(id)
+        var checkNodes=node.parent().parent().parent().parent().find("[data-one='one']")
+
+        if(node.is(":checked")){
+            checkNodes.each(function(){
+                $(this).prop("checked",true)
+            })
+        }else{
+            checkNodes.each(function(){
+                $(this).prop("checked",false)
+            })
+        }
+    }
+
+    function grantActions(){
+        var allActions=[]
+        var allNodes=$('input[data-one]')
+        allNodes.each(function(){
+            if($(this).is(":checked")){
+                allActions.push($(this).val())
+            }
+        })
+        $.ajax({
+            url:"/admin/role",
+            type:"PUT",
+            data:{
+                roleid:$("#roleid").text(),
+                actions:allActions
+            },
+            success:function(data){
+                location.assign("/admin/role")
+            }
+        })
+    }
+
+    function selectAll(){
+        var allNodes=$("[data-one]")
+        allNodes.each(function(){
+            $(this).prop("checked",true)
+        })
+        $("[data-all]").each(function(){
+            $(this).prop("checked",true)
+        })
+    }
+
+    function deselectAll(){
+        var allNodes=$("[data-one]")
+        allNodes.each(function(){
+            $(this).prop("checked",false)
+        })
+        $("[data-all]").each(function(){
+            $(this).prop("checked",false)
+        })
+    }
+
+</script>
+{% endblock %}
+
+{% block funcbar %}
+<div class="col-md-1">
+    <button type="button" class="btn btn-primary" onclick="grantActions()">授权</button>
+</div>
+<div class="col-md-1">
+    <button type="button" class="btn btn-primary" onclick="selectAll()">全选</button>
+</div>
+<div class="col-md-1">
+    <button type="button" class="btn btn-primary" onclick="deselectAll()">全不选</button>
+</div>
+<div class="col-md-1">
+    <a class="btn btn-default" href="/admin/role" role="button">取消</a>
+</div>
+{% endblock %}
+
+{% block main %}
+<span id="roleid" style="display:none">{{ roleid }}</span>
+{% for action in actions %}
+<div class="row">
+    <h1 style="font-size: 25px;">{{ loop.key }}</h1>
+    <hr>
+    <div class="col-md-12">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" data-all="all" onclick="selectGroupAll(this)"> 全选/反选
+            </label>
+        </div>
+    </div>
+    {% for oneAction in action %}
+    <div class="col-md-2">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" data-one="one" {% if oneAction %}checked="checked"{% endif %} value="{{ loop.key }}"> {{ loop.key }}
+            </label>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<br><br>
+{% endfor %}
+{% endblock %}

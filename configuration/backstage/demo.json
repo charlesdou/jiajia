@@ -1,0 +1,4 @@
+{
+  "listen_app_port":8089,
+  "static_server_url":"http://static.sunrisin.com:9001"
+}

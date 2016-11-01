@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<table border="0" cellspacing="0" cellpadding="0" style="padding:0; margin:0; padding:0 20px;">
+		<tr><td><p style="padding:0;margin:0; font-size:40px; color:#333; line-height:100px; height:100px">以下是您的验证码：</p></td></tr>
+		<tr><td><p style="padding:0;margin:0; font-size:48px; color:#f60; line-height:100px; height:100px">{{ identifyingcode }}</p></td></tr>
+		<tr><td><p style="padding:0;margin:0; font-size:30px; color:#333; line-height:60px; height:60px">你好 {{ user | userNameInMail }}<br>该邮件来自{{ appname }}<br><em style="padding:0;margin:0; font-weight:700">请注意：该验证码将在{{ code_expires }}分钟后失效</em></p></td></tr>
+	</table>
+</body>
+</html>

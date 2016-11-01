@@ -1,0 +1,22 @@
+{
+  "description": "创建群组",
+  "protocol": "",
+  "method": "post",
+  "path": "group",
+  "params": {},
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "groupname": "我的调试",
+    "desc": "我在调试了",
+    "maxusers": 20
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "_id": "57e272b131cd965e658da8b4",
+    "group_imid": "244355444187857328"
+  }
+}

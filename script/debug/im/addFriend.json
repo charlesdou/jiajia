@@ -1,0 +1,28 @@
+{
+  "description": "添加对方为朋友",
+  "protocol": "",
+  "method": "post",
+  "path": "friend/:userid",
+  "params": {
+    "userid": "57e23a80e97b4ca1623462dc"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "_id_user": "57e1530abef390d05e294797",
+    "_id_friend": "57e23a80e97b4ca1623462dc",
+    "remarkname": "小色狼",
+    "isStarred": false,
+    "isTopped": false,
+    "isNonDisturb": false,
+    "dt_add": 1474446346617,
+    "dt_sync": 1474446346617,
+    "notVisitWeibo": false,
+    "notAllowedVisitWeibo": false
+  }
+}

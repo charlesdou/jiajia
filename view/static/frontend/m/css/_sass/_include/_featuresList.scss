@@ -1,0 +1,21 @@
+.featuresList{
+	display:-moz-box;
+	display:-webkit-box;
+	display:box;
+	line-height: rem-calc(90px);
+	height: rem-calc(90px);
+	background: #e1e1e1;
+	position: fixed;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	margin-top: rem-calc(-90px);
+	z-index: #{$global_header_zindex} - 10;
+	li{
+		display: block;
+		@include setCssAttr("box-flex","1");
+		a{
+			display: block;
+		}
+	}
+}

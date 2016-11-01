@@ -1,0 +1,129 @@
+{
+  "description": "查看微博详情",
+  "protocol": "",
+  "method": "post",
+  "path": "sync/details/:weiboid",
+  "params": {
+    "weiboid": "5800fdab94bbd54e3af389e5"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "down": true
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "_id": "5800fdab94bbd54e3af389e5",
+    "subject": "测试添加简投",
+    "maxchoose": 2,
+    "type": 1,
+    "showloc": false,
+    "dt_publish": 1476459947154,
+    "dt_sync": 1476460268832,
+    "praises": 0,
+    "allegations": 0,
+    "forwards": 0,
+    "comments": [
+      {
+        "_id": "5800feec94bbd54e3af389f3",
+        "user": "57e1530abef390d05e294797",
+        "comment": "评论5",
+        "newest_replies": [
+          {
+            "_id_reply": "5800ff7994bbd54e3af389fd",
+            "user": "57e1530abef390d05e294797",
+            "content": "那是,也不看看谁发的,哈哈5",
+            "to": "57e1530abef390d05e294797",
+            "dt_reply": 1476460409907,
+            "user_nickname": "超能程序猿",
+            "user_img_headportrait": "/home/57e1530abef390d05e294797/20160921/upload_d57222b7ba2bd2e5813c362befd404a1.jpg",
+            "to_nickname": "超能程序猿",
+            "to_img_headportrait": "/home/57e1530abef390d05e294797/20160921/upload_d57222b7ba2bd2e5813c362befd404a1.jpg"
+          },
+          {
+            "_id_reply": "5800ff7094bbd54e3af389fb",
+            "user": "57e1530abef390d05e294797",
+            "content": "那是,也不看看谁发的,哈哈4",
+            "to": "57e1530abef390d05e294797",
+            "dt_reply": 1476460400314,
+            "user_nickname": "超能程序猿",
+            "user_img_headportrait": "/home/57e1530abef390d05e294797/20160921/upload_d57222b7ba2bd2e5813c362befd404a1.jpg",
+            "to_nickname": "超能程序猿",
+            "to_img_headportrait": "/home/57e1530abef390d05e294797/20160921/upload_d57222b7ba2bd2e5813c362befd404a1.jpg"
+          }
+        ],
+        "reply_count": 5,
+        "dt_comment": 1476460268831,
+        "nickname": "超能程序猿",
+        "img_headportrait": "/home/57e1530abef390d05e294797/20160921/upload_d57222b7ba2bd2e5813c362befd404a1.jpg"
+      },
+      {
+        "_id": "5800fee294bbd54e3af389f1",
+        "user": "57e1530abef390d05e294797",
+        "comment": "评论4",
+        "newest_replies": [],
+        "reply_count": 0,
+        "dt_comment": 1476460258483,
+        "nickname": "超能程序猿",
+        "img_headportrait": "/home/57e1530abef390d05e294797/20160921/upload_d57222b7ba2bd2e5813c362befd404a1.jpg"
+      },
+      {
+        "_id": "5800fed794bbd54e3af389ef",
+        "user": "57e1530abef390d05e294797",
+        "comment": "评论3",
+        "newest_replies": [],
+        "reply_count": 0,
+        "dt_comment": 1476460247349,
+        "nickname": "超能程序猿",
+        "img_headportrait": "/home/57e1530abef390d05e294797/20160921/upload_d57222b7ba2bd2e5813c362befd404a1.jpg"
+      },
+      {
+        "_id": "5800fece94bbd54e3af389ed",
+        "user": "57e1530abef390d05e294797",
+        "comment": "评论2",
+        "newest_replies": [],
+        "reply_count": 0,
+        "dt_comment": 1476460238468,
+        "nickname": "超能程序猿",
+        "img_headportrait": "/home/57e1530abef390d05e294797/20160921/upload_d57222b7ba2bd2e5813c362befd404a1.jpg"
+      },
+      {
+        "_id": "5800fec294bbd54e3af389eb",
+        "user": "57e1530abef390d05e294797",
+        "comment": "评论1",
+        "newest_replies": [],
+        "reply_count": 0,
+        "dt_comment": 1476460226756,
+        "nickname": "超能程序猿",
+        "img_headportrait": "/home/57e1530abef390d05e294797/20160921/upload_d57222b7ba2bd2e5813c362befd404a1.jpg"
+      }
+    ],
+    "publish_user": "57e1530abef390d05e294797",
+    "location": "",
+    "options": [
+      {
+        "_id": "5800fdab94bbd54e3af389e6",
+        "text": "选项A",
+        "img_option": "/home/57e1530abef390d05e294797/20161014/upload_b65b5d954fc387e0d883188691b482b4.jpg",
+        "count": 1
+      },
+      {
+        "_id": "5800fdab94bbd54e3af389e7",
+        "text": "选项B",
+        "img_option": "/home/57e1530abef390d05e294797/20161014/upload_f22b892ffaebe99b0d153ffe914595d6.jpg",
+        "count": 1
+      },
+      {
+        "_id": "5800fdab94bbd54e3af389e8",
+        "text": "选项C",
+        "img_option": "/home/57e1530abef390d05e294797/20161014/upload_5b8d65684faaae80441e7b938059f89c.png",
+        "count": 0
+      }
+    ],
+    "nickname": "超能程序猿",
+    "img_headportrait": "/home/57e1530abef390d05e294797/20160921/upload_d57222b7ba2bd2e5813c362befd404a1.jpg"
+  }
+}

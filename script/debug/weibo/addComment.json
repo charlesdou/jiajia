@@ -1,0 +1,25 @@
+{
+  "description": "添加评论",
+  "protocol": "",
+  "method": "post",
+  "path": "comment/:weiboid",
+  "params": {
+    "weiboid": "5800fdab94bbd54e3af389e5"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "comment": "评论5"
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "_id": "5800feec94bbd54e3af389f3",
+    "weibo": {
+      "_id": "5800fdab94bbd54e3af389e5",
+      "comments": 5
+    }
+  }
+}

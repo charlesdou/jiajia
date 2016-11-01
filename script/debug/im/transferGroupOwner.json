@@ -1,0 +1,18 @@
+{
+  "description": "群主转让给他人并退出群",
+  "protocol": "",
+  "method": "put",
+  "path": "group/:groupid/owner/ownerid",
+  "params": {
+    "groupid":"57bb43f642db3d3e577429f1",
+    "ownerid":"13917618428"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

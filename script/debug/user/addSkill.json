@@ -1,0 +1,22 @@
+{
+  "description": "添加职业技能",
+  "protocol": "",
+  "method": "post",
+  "path": "resume/:resumeid/skill",
+  "params": {
+    "resumeid": "57c42aa72103c9fa12328850"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "name": "c++",
+    "assessment": 5
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "_id": "57cf1987977907811d5a2158"
+  }
+}

@@ -1,0 +1,13 @@
+@mixin boxSizing(){
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
+@mixin setCssAttr($attr,$param){
+  #{$attr}: #{$param};
+  -moz-#{$attr}: #{$param};
+  -webkit-#{$attr}: #{$param};
+  -ms-#{$attr}: #{$param};
+  -o-#{$attr}: #{$param};
+}

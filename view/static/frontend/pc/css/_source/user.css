@@ -1,0 +1,103 @@
+.global_input { line-height: 42px; height: 42px; }
+.global_input input { padding: 10px 0; }
+
+.mod .th .sMark { background: #fff; color: #333; }
+.mod .th .pFun { position: absolute; top: 0; right: 0; background: #fff; padding: 0 0 0 5px; height: 60px; z-index: 10; }
+.mod .th .pFun a { float: left; color: #00b98d; }
+.mod .th .pFun a .iconfont { color: #00b98d; padding-right: 3px; line-height: 60px; font-size: 12px; }
+.mod .th .pFun a:hover { color: #ffcc01; }
+.mod .th .pFun a:hover .iconfont { color: #ffcc01; }
+
+.dlForm { padding: 0 50px; }
+.dlForm dt { line-height: 36px; font-size: 18px; height: 36px; padding-top: 20px; }
+.dlForm .ddBtn { padding: 20px 100px 0; }
+.dlForm .global_file { padding-top: 10px; line-height: 52px; }
+.dlForm .global_file .global_file_btn { line-height: 50px; height: 50px; }
+.dlForm .global_file .global_file_btn span { height: 50px; }
+.dlForm .global_file .global_file_btn span .iconfont { height: 50px; font-size: 24px; line-height: 50px; }
+
+.userForm .sTit { display: block; line-height: 36px; height: 36px; padding-bottom: 20px; text-align: center; font-size: 16px; }
+.userForm .pCompetence { text-align: center; }
+.userForm .pCompetence span { display: block; line-height: 30px; height: 30px; }
+.userForm ul li { padding: 0 0 20px 0; width: 100%; float: left; }
+.userForm ul li .sTips { display: block; height: 30px; line-height: 30px; color: #cc3742; }
+.userForm ul li .sTips .iconfont { color: #cc3742; padding-right: 3px; line-height: 30px; }
+.userForm ul li .global_select { width: auto; float: none; height: 42px; line-height: 42px; }
+.userForm ul li .global_select select { line-height: 42px; }
+.userForm ul li .sBtnDes { line-height: 30px; height: 30px; color: #999; display: block; text-align: center; padding: 10px 0 0 0; }
+.userForm ul li .addBtn { float: left; color: #00b98d; }
+.userForm ul li .addBtn:hover { color: #ffcc01; }
+.userForm ul li .aNum { float: right; color: #999; }
+.userForm ul li .aNum em { color: #cc3742; }
+.userForm ul li .global_area textarea { font-size: 14px; height: 72px; }
+.userForm ul li .pBtn { padding: 20px 0 0 0; }
+.userForm ul li .pBtn .prevBtn { float: left; line-height: 42px; color: #999; font-size: 16px; }
+.userForm ul li .pBtn .prevBtn:hover { color: #ffcc01; }
+.userForm ul li .pBtn .globalBtn { float: right; padding: 0 20px; }
+
+.badgeList { width: 420px; margin: 0 auto; }
+.badgeList li { width: 360px; float: left; background: #eee; padding: 15px 30px; border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; -ms-border-radius: 10px; -o-border-radius: 10px; margin: 10px 0 0 0; display: inline; }
+.badgeList li .pic { float: left; width: 50px; }
+.badgeList li .pic img { width: 50px; height: 50px; }
+.badgeList li .txt { width: 290px; float: right; }
+.badgeList li .txt span.sDes { line-height: 24px; display: block; }
+
+.noResume { padding: 0 50px; text-align: center; }
+.noResume .sDes { display: block; line-height: 36px; height: 36px; padding: 20px 0; }
+.noResume .globalBtn { width: 110px; padding: 0; margin: 0 auto; }
+
+.leftCon { width: 230px; float: left; margin-right: 20px; display: inline; }
+.leftCon .userMenu a { float: left; width: 100%; line-height: 48px; height: 48px; overflow: hidden; text-align: center; display: block; color: #333; font-size: 16px; background: #fafafa; }
+.leftCon .userMenu a:hover { color: #333; }
+.leftCon .userMenu a.cur, .leftCon .userMenu a.cur:hover { background: #ffcc01; }
+
+.middleCon { width: 470px; float: left; }
+.middleCon .bannerCon { padding-top: 20px; background-repeat: no-repeat; background-position: center 0; box-shadow: 0 15px 15px -9px rgba(0,0,0,0.3) inset; -moz-box-shadow: 0 15px 15px -9px rgba(0,0,0,0.3) inset; -webkit-box-shadow: 0 15px 15px -9px rgba(0,0,0,0.3) inset; -ms-box-shadow: 0 15px 15px -9px rgba(0,0,0,0.3) inset; -o-box-shadow: 0 15px 15px -9px rgba(0,0,0,0.3) inset; }
+.middleCon .bannerCon .userPhoto { width: 54px; height: 54px; padding: 5px; display: block; overflow: hidden; margin: 0 auto; border-radius: 100%; -moz-border-radius: 100%; -webkit-border-radius: 100%; -ms-border-radius: 100%; -o-border-radius: 100%; background: rgba(255, 255, 255, 0.3); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#4Cffffff,endColorstr=#4Cffffff); }
+.middleCon .bannerCon .userPhoto img, .middleCon .bannerCon .userPhoto .sUpload { width: 100%; height: 100%; vertical-align: top; display: block; text-align: center; background: #fff; color: #333; line-height: 54px; font-size: 12px; white-space: nowrap; overflow: hidden; border-radius: 100%; -moz-border-radius: 100%; -webkit-border-radius: 100%; -ms-border-radius: 100%; -o-border-radius: 100%; }
+.middleCon .userIntro { padding-bottom: 20px; }
+.middleCon .userIntro span { display: block; line-height: 24px; text-align: center; }
+.middleCon .userIntro span.sName { font-size: 24px; line-height: 48px; }
+.middleCon .userIntro span.sTips { font-size: 16px; line-height: 36px; }
+.middleCon .userIntro span.sDes { color: #999; }
+.middleCon .userIntro span.sDes .iconfont { font-size: 14px; color: #999; }
+.middleCon .userIntro span.sDes em { padding: 0 5px; }
+.middleCon .introList li { width: 100%; float: left; display: inline; padding-bottom: 20px; }
+.middleCon .introList li p { width: 100%; float: left; }
+.middleCon .introList li .pTit { line-height: 30px; height: 30px; font-size: 16px; }
+.middleCon .introList li .pTit .companyName { float: left; }
+.middleCon .introList li .pTit .aEdit { float: right; color: #00b98d; font-size: 14px; }
+.middleCon .introList li .pTit .aEdit .iconfont { color: #00b98d; padding-right: 3px; line-height: 30px; font-size: 14px; }
+.middleCon .introList li .pTit .aEdit:hover { color: #ffcc01; }
+.middleCon .introList li .pTit .aEdit:hover .iconfont { color: #ffcc01; }
+.middleCon .introList li .pDes { color: #999; padding: 0 0 10px 0; }
+.middleCon .introList li .pDes span { line-height: 24px; }
+.middleCon .introList li .pDes span.sJob { float: left; width: 260px; }
+.middleCon .introList li .pDes span.sTime { float: right; }
+
+.rightCon { width: 200px; float: right; }
+.rightCon .uploadBtn { line-height: 48px; height: 48px; text-align: center; background: #fafafa; display: block; color: #333; }
+.rightCon .uploadBtn .iconfont { padding-right: 5px; font-size: 14px; }
+.rightCon .uploadBtn:hover { color: #ffcc01; }
+.rightCon .resumeCon { background: #fafafa; padding: 10px 10px 15px 10px; }
+.rightCon .resumeCon .pTxt { line-height: 24px; height: 24px; padding-bottom: 10px; font-size: 12px; }
+.rightCon .resumeCon .pTxt .previewBtn { float: right; color: #00b98d; }
+.rightCon .resumeCon .pTxt .previewBtn:hover { color: #ffcc01; }
+.rightCon .resumeCon .pTxt .sNum { float: left; }
+.rightCon .resumeCon .pTxt .sNum em { color: #00b98d; }
+.rightCon .resumeCon .sProgressBar { width: 100%; line-height: 0; font-size: 0; height: 6px; overflow: hidden; background: #eee; display: block; border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px; -ms-border-radius: 6px; -o-border-radius: 6px; }
+.rightCon .resumeCon .sProgressBar em { float: left; background: #00b98d; height: 6px; font-size: 0; line-height: 0; overflow: hidden; border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px; -ms-border-radius: 6px; -o-border-radius: 6px; }
+.rightCon .funList li { width: 100%; float: left; display: inline; line-height: 42px; height: 42px; position: relative; }
+.rightCon .funList li .aClose { position: absolute; width: 16px; height: 16px; overflow: hidden; line-height: 16px; text-align: center; top: 50%; right: 10px; margin-top: -8px; display: none; }
+.rightCon .funList li .aClose .iconfont { width: 16px; height: 16px; overflow: hidden; text-align: center; font-size: 14px; color: #666; }
+.rightCon .funList li .aFun { padding-left: 2px; display: block; color: #333; }
+.rightCon .funList li .aFun .iconfont { float: left; padding: 0 10px 0 10px; height: 42px; line-height: 42px; color: #333; }
+.rightCon .funList li .aFun:hover { color: #ffcc01; }
+.rightCon .funList li .aFun:hover .iconfont { color: #ffcc01; }
+.rightCon .funList li.hover, .rightCon .funList li:hover { background: #f5f5f5; }
+.rightCon .funList li.hover .aClose, .rightCon .funList li:hover .aClose { display: block; }
+.rightCon .funList li.cur, .rightCon .funList li.cur:hover { background: #f5f5f5; }
+.rightCon .funList li.cur .aFun, .rightCon .funList li.cur:hover .aFun { color: #00b98d; padding-left: 0; border-left: 2px solid #00b98d; }
+.rightCon .funList li.cur .aFun .iconfont, .rightCon .funList li.cur:hover .aFun .iconfont { color: #00b98d; }
+.rightCon .funList li.cur .aFun:hover, .rightCon .funList li.cur:hover .aFun:hover { color: #00b98d; }
+.rightCon .funList li.cur .aFun:hover .iconfont, .rightCon .funList li.cur:hover .aFun:hover .iconfont { color: #00b98d; }

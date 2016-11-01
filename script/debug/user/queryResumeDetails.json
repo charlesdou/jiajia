@@ -1,0 +1,42 @@
+{
+  "description": "查询简历详情",
+  "protocol": "",
+  "method": "get",
+  "path": "resume/:resumeid/details",
+  "params": {
+    "resumeid": "57e22e469dcb6b9d615d1ac1"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "_id": "57e22e469dcb6b9d615d1ac1",
+    "img_headportrait": "/home/57e1530abef390d05e294797/20160921/upload_3857c3d0a626faf01f9fb4b69b82c14b.png",
+    "userid": "57e1530abef390d05e294797",
+    "name": "窦晨超",
+    "sex": 0,
+    "degree": 2,
+    "birthday": 19870922,
+    "province": "上海",
+    "address": "上海市宝山区祁华路",
+    "introduction": "酷爱编程的我。",
+    "phone": "56683587",
+    "email": "13917618429@163.com",
+    "dt_create": 1474440774982,
+    "education": [],
+    "skill": [],
+    "job": [],
+    "project": [],
+    "expectation": {
+      "position": "软件研发工程师",
+      "city": "上海",
+      "salary": 30,
+      "supplementary": "高级架构师"
+    },
+    "selfdescription": "热爱生活，工作有激情，酷爱编程，对一切计算机科学与互联网领域的新鲜事物愿意学习与尝试，是一个重度极客。"
+  }
+}

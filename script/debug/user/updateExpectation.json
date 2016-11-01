@@ -1,0 +1,22 @@
+{
+  "description": "修改工作期望",
+  "protocol": "",
+  "method": "put",
+  "path": "resume/:resumeid/expectation",
+  "params": {
+    "resumeid": "57e22e469dcb6b9d615d1ac1"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "position": "软件研发工程师",
+    "city": "上海",
+    "salary": 30,
+    "supplementary": "高级架构师"
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

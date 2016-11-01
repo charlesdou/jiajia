@@ -1,0 +1,536 @@
+{
+  "description": "添加教育经历",
+  "protocol": "",
+  "method": "post",
+  "path": "resume/:resumeid/education",
+  "params": {
+    "resumeid": "57c42aa72103c9fa12328850"     简历ID
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "university": "华东理工大学",    学校
+    "degree": 2,                   学历
+    "majority": "计算机软件与理论",  专业
+    "start": 201009,               起始时间
+    "end": 201303                  结束时间
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": "57c44ac64116baaa143fe3f4"   教育经历ID
+}
+
+
+{
+  "description": "添加项目经历",
+  "protocol": "",
+  "method": "post",
+  "path": "resume/:resumeid/project",
+  "params": {
+    "resumeid": "57c42aa72103c9fa12328850"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "project_name": "加加网",     项目名称
+    "responsibility": "架构师",     承担职责
+    "begin": 201603,               起始时间
+    "end": 201606,                结束时间
+    "description": "大学生公益平台项目",     项目描述
+    "url": "http://www.sunrisin.com"      项目展示链接
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": "57c44b204116baaa143fe3f6"    项目ID
+}
+
+
+{
+  "description": "添加简历",
+  "protocol": "",
+  "method": "post",
+  "path": "resume",
+  "params": {},
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "img_headportrait": "/home/13917618429/20160829/upload_a2e9ed194f44fffc883d49dc909dd7e4.jpg",     简历头像
+    "userid": "13917618429",     用户ID
+    "name": "窦晨超",     姓名
+    "sex": 0,     性别  0 男 1 女
+    "degree": 2,     学历 0 大专 1 本科 2 硕士 3 博士
+    "birthday": 19870922,     生日
+    "province": "上海",     省份
+    "address": "上海市闸北区场中路3300弄55号201室",     常用地址
+    "introduction": "",     一句户介绍自己
+    "phone": "13917618429",     联系方式
+    "email": "13917618429@163.com",    邮件
+    "dt_create": 1472473767129,      创建时间
+    "education": [],     教育经历
+    "skill": [],         职业技能
+    "job": [],      工作经历
+    "project": [],     项目经历
+    "expectation": {     工作期望
+      "position": "",     职位
+      "city": "",         工作城市
+      "salary": 0,        薪资期望 单位为K
+      "supplementary": ""     补充说明
+    },
+    "_id": "57c42aa72103c9fa12328850"     简历ID
+  }
+}
+
+
+{
+  "description": "添加职业技能",
+  "protocol": "",
+  "method": "post",
+  "path": "resume/:resumeid/skill",
+  "params": {
+    "resumeid": "57c42aa72103c9fa12328850"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "name": "python",       技能
+    "assessment": 3      程度
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": "57c44adb4116baaa143fe3f5"     职业技能ID
+}
+
+
+{
+  "description": "添加工作经历",
+  "protocol": "",
+  "method": "post",
+  "path": "resume/:resumeid/job",
+  "params": {
+    "resumeid": "57c42aa72103c9fa12328850"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "company_name": "Erricsson",   公司名称
+    "position": "C++工程师",     职位
+    "start": 201507,     开始时间
+    "end": -1,      结束时间(-1 表示还未结束)
+    "content": "esm cba"     工作内容
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": "57c44b374116baaa143fe3f7"     工作经历ID
+}
+
+
+{
+  "description":"删除教育经历",
+  "protocol": "",
+  "method": "delete",
+  "path": "resume/:resumeid/education/:educationid",
+  "params":{
+    "resumeid": "57c42aa72103c9fa12328850",
+    "educationid": "57c42dce2103c9fa12328851"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}
+
+
+{
+  "description": "删除项目经历",
+  "protocol": "",
+  "method": "delete",
+  "path": "resume/:resumeid/project/:projectid",
+  "params": {
+    "resumeid": "57c42aa72103c9fa12328850",
+    "projectid": "57c436252103c9fa12328854"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}
+
+
+{
+  "description":"删除简历",
+  "protocol": "",
+  "method": "delete",
+  "path": "resume/:resumeid/education/:educationid",
+  "params":{
+    "resumeid": "57c42aa72103c9fa12328850",
+    "educationid": "57c42dce2103c9fa12328851"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}
+
+
+{
+  "description": "删除职业技能",
+  "protocol": "",
+  "method": "delete",
+  "path": "resume/:resumeid/skill/:skillid",
+  "params": {
+    "resumeid": "57c42aa72103c9fa12328850",
+    "skillid": "57c431892103c9fa12328852"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}
+
+
+{
+  "description": "删除工作经历",
+  "protocol": "",
+  "method": "delete",
+  "path": "resume/:resumeid/job/:jobid",
+  "params": {
+    "resumeid": "57c42aa72103c9fa12328850",
+    "jobid": "57c433242103c9fa12328853"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}
+
+
+{
+  "description": "查询简历详情",
+  "protocol": "",
+  "method": "get",
+  "path": "resume/:resumeid/details",
+  "params": {
+    "resumeid": "57c42aa72103c9fa12328850"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "_id": "57c42aa72103c9fa12328850",
+    "img_headportrait": "/home/13917618429/20160829/upload_a25bb97a0f497beeb9e23642210eaad6.jpg",
+    "userid": "13917618429",
+    "name": "窦晨超",
+    "sex": 0,
+    "degree": 2,
+    "birthday": 19870922,
+    "province": "上海",
+    "address": "上海市宝山区祁华路",
+    "introduction": "酷爱编程的我。",
+    "phone": "56683587",
+    "email": "13917618429@163.com",
+    "dt_create": 1472473767129,
+    "education": [
+      {
+        "university": "华东理工大学",
+        "degree": 2,
+        "majority": "计算机软件与理论",
+        "start": 201009,
+        "end": 201303,
+        "id": "57c44ac64116baaa143fe3f4"
+      }
+    ],
+    "skill": [
+      {
+        "name": "python",
+        "assessment": 3,
+        "id": "57c44adb4116baaa143fe3f5"
+      }
+    ],
+    "job": [
+      {
+        "company_name": "Erricsson",
+        "position": "C++工程师",
+        "start": 201507,
+        "end": -1,
+        "content": "esm cba",
+        "id": "57c44b374116baaa143fe3f7"
+      }
+    ],
+    "project": [
+      {
+        "project_name": "加加网",
+        "responsibility": "架构师",
+        "begin": 201603,
+        "end": 201606,
+        "description": "大学生公益平台项目",
+        "url": "http://www.sunrisin.com",
+        "id": "57c44b204116baaa143fe3f6"
+      }
+    ],
+    "expectation": {
+      "position": "软件研发工程师",
+      "city": "上海",
+      "salary": 30,
+      "supplementary": "软件工程师"
+    },
+    "selfdescription": "热爱生活，工作有激情，酷爱编程，对一切计算机科学与互联网领域的新鲜事物愿意学习与尝试，是一个重度极客。"
+  }
+}
+
+
+{
+  "description": "获取所有简历ID",
+  "protocol": "",
+  "method": "get",
+  "path": "resume",
+  "params": {},
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": [
+    "57be8625993f27e2145cb360",     简历ID
+    "57be863b993f27e2145cb361",
+    "57c42aa72103c9fa12328850"
+  ]
+}
+
+
+{
+  "description": "修改简历基本信息",
+  "protocol": "",
+  "method": "put",
+  "path": "resume/:resumeid/basic",
+  "params": {
+    "resumeid": "57c42aa72103c9fa12328850"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "province": "上海",     所在城市
+    "phone": "56683587",     联系方式
+    "email": "13917618429@163.com",     邮箱
+    "address": "上海市宝山区祁华路",     常用地址
+    "degree": 2,     学历
+    "introduction": "酷爱编程的我。"     一句话介绍自己
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}
+
+
+{
+  "description": "修改教育经历",
+  "protocol": "",
+  "method": "put",
+  "path": "resume/:resumeid/education/:educationid",
+  "params": {
+    "resumeid": "57c42aa72103c9fa12328850",
+    "educationid": "57c42dce2103c9fa12328851"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "university": "华东理工大学",
+    "degree": 2,
+    "majority": "计算机软件与理论",
+    "start": 201009,
+    "end": 201303
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}
+
+
+{
+  "description": "修改工作期望",
+  "protocol": "",
+  "method": "put",
+  "path": "resume/:resumeid/expectation",
+  "params": {
+    "resumeid": "57c42aa72103c9fa12328850"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "position": "软件研发工程师",
+    "city": "上海",
+    "salary": 30,
+    "supplementary": "软件工程师"
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}
+
+
+{
+  "descripition":"更改简历头像",
+  "protocol": "",
+  "method": "put",
+  "path": "resume/:resumeid/headportrait",
+  "params": {
+    "resumeid": "57c42aa72103c9fa12328850"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "form",
+  "req_body": {
+    "img_headportrait": {
+      "file": "./multimedia/2.jpg",
+      "content_type": "image/jpeg"
+    }
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "img_headportrait": "/home/13917618429/20160829/upload_a25bb97a0f497beeb9e23642210eaad6.jpg"
+  }
+}
+
+{
+  "description": "更改项目经历",
+  "protocol": "",
+  "method": "put",
+  "path": "resume/:resumeid/project/:projectid",
+  "params": {
+    "resumeid": "57c42aa72103c9fa12328850",
+    "projectid": "57c436252103c9fa12328854"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "project_name": "加加网",
+    "responsibility": "架构师",
+    "begin": 201603,
+    "end": 201606,
+    "description": "大学生公益平台项目1",
+    "url": "http://www.sunrisin.com"
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}
+
+{
+  "description": "更改自我介绍",
+  "protocol": "",
+  "method": "put",
+  "path": "resume/:resumeid/selfdescription",
+  "params": {
+    "resumeid": "57c42aa72103c9fa12328850"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "selfdescription": "热爱生活，工作有激情，酷爱编程，对一切计算机科学与互联网领域的新鲜事物愿意学习与尝试，是一个重度极客。"     自我介绍
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}
+
+
+{
+  "description": "修改职业技能",
+  "protocol": "",
+  "method": "put",
+  "path": "resume/:resumeid/skill/:skillid",
+  "params": {
+    "resumeid": "57c42aa72103c9fa12328850",
+    "skillid": "57c431892103c9fa12328852"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "name": "python",
+    "assessment": 5
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}
+
+
+{
+  "description": "修改工作经历",
+  "protocol": "",
+  "method": "put",
+  "path": "resume/:resumeid/job/:jobid",
+  "params": {
+    "resumeid": "57c42aa72103c9fa12328850",
+    "jobid": "57c433242103c9fa12328853"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "company_name": "Erricson",
+    "position": "C++工程师",
+    "start": 201507,
+    "end": -1,
+    "content": "esm cba1"
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}
+
+
+

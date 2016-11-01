@@ -1,0 +1,9 @@
+{
+  "apps":
+    {
+      "name": "hongxin",
+      "cwd": "/nodejs/hongxin/hongxin",
+      "script": "./index.js",
+      "args": "--demo --frontend",
+    }
+}

@@ -1,0 +1,166 @@
+@charset "gb2312";
+@import "common.scss";
+@import "_include/var.scss";
+
+html,body{
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+body{
+	background-color: #cb333f;
+}
+
+.wrapper,.main{
+	height: 100%;
+	width: 100%;
+}
+
+.welcomePage{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	text-align: center;
+	.iconfont{
+		margin: 0 auto;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		display: block;
+		text-align: center;
+		font-size: rem-calc(300px);
+		@include setCssAttr("transform","translateX(-50%) translateY(-60%)");
+		color: #fff;
+	}
+}
+
+.pBottomTips{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	line-height: rem-calc(60px);
+	height: rem-calc(60px);
+	text-align: center;
+	color: #fff;
+	font-size: rem-calc(22px);
+	a{
+		color: #e2b128;
+		text-decoration: underline;
+	}
+}
+
+.form{
+	padding:0 rem-calc(20px);
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	@include setCssAttr("box-sizing","border-box");
+	@include setCssAttr("transform","translateX(-50%) translateY(-60%)");
+	text-align: center;
+	.iLogo{
+		margin:0 auto;
+		display: block;
+		font-size: rem-calc(120px);
+		color: #fff;
+		width: rem-calc(120px);
+		height: rem-calc(120px);
+		overflow: hidden;
+		line-height: rem-calc(120px);
+	}
+	.sTit{
+		padding-top: rem-calc(20px);
+		font-size: rem-calc(32px);
+		height: rem-calc(60px);
+		line-height: rem-calc(60px);
+		display:block;
+		color: #fff;
+		text-align: center;
+	}
+	.formList{
+		.sInput{
+			overflow: hidden;
+			line-height: rem-calc(78px);
+			height: rem-calc(78px);
+			display:-moz-box;
+			display:-webkit-box;
+			display:box;
+			background: #fff;
+			@include setCssAttr("box-sizing","border-box");
+			@include setCssAttr("border-radius",rem-calc(10px));
+			margin-top: rem-calc(20px);
+			.inputTxt{
+				@include setCssAttr("box-flex","1");
+				display: block;
+				border: 0 none;
+				line-height: rem-calc(48px);
+				height: rem-calc(48px);
+				font-size: rem-calc(32px);
+				background: none;
+				padding: rem-calc(15px) rem-calc(20px);
+				vertical-align: middle;
+			}
+			.aGetCode{
+				display: block;
+				font-size: rem-calc(32px);
+				color: #ababab;
+				position: relative;
+				width: rem-calc(220px);
+				overflow: hidden;
+				&:after{
+					content: "";
+					position: absolute;
+					height: rem-calc(48px);
+					top: rem-calc(15px);
+					left: 0;
+					width: 1px;
+					font-size: 0;
+					line-height: 0;
+					background-color: #ababab;
+					overflow: hidden;
+				}
+			}
+			.aShowPassWord{
+				width: rem-calc(100px);
+				height: rem-calc(78px);
+				text-align: center;
+				display: block;
+				.iconfont{
+					color: #999;
+					font-size: rem-calc(50px);
+					line-height: rem-calc(78px);
+				}
+			}
+			&.cur{
+				.aShowPassWord{
+					.iconfont{
+						color: #cb333f;
+					}
+				}
+			}
+		}
+		.aSubmitBtn{
+			line-height: rem-calc(72px);
+			@include setCssAttr("border-radius",rem-calc(10px));
+			border: rem-calc(3px) solid #fff;
+			display: block;
+			font-size: rem-calc(32px);
+			color: #fff;
+			margin-top: rem-calc(20px);
+		}
+	}
+	.pTips{
+		text-align: center;
+		font-size: rem-calc(32px);
+		color: #fff;
+		line-height: rem-calc(78px);
+		height: rem-calc(78px);
+		padding-top: rem-calc(20px);
+		a{
+			color: #e2b128;
+			text-decoration: underline;
+		}
+	}
+}

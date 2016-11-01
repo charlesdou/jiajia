@@ -1,0 +1,19 @@
+{
+  "description": "开启星标朋友或关闭星标朋友",
+  "protocol": "",
+  "method": "put",
+  "path": "friend/star/:userid",
+  "params": {
+    "userid": "57e239f6e97b4ca1623462db"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "isStarred": true
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

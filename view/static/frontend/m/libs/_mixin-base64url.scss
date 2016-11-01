@@ -1,0 +1,10 @@
+@mixin inlineImage($picName, $path: '', $suffix: png){
+  .#{$picName}{
+    background-image: inline-image($path+$picName+'.'+$suffix);
+  }
+}
+// example È±Ê¡png
+// @include inlineImage('Í¼Æ¬Ãû','Í¼Æ¬Â·¾¶','Í¼Æ¬ÀàÐÍ');
+// @include inlineImage('name');
+// @include inlineImage('name','gif');
+// @include inlineImage('name','icon/','gif');

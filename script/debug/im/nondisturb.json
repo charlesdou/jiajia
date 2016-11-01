@@ -1,0 +1,19 @@
+{
+  "description": "开启或关闭免息打扰模式",
+  "protocol": "",
+  "method": "put",
+  "path": "friend/nondisturb/:userid",
+  "params": {
+    "userid": "57e239f6e97b4ca1623462db"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "isNonDisturb": false
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

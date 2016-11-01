@@ -1,0 +1,15 @@
+{
+  "description": "退出登录",
+  "protocol": "",
+  "method": "delete",
+  "path": "logout",
+  "params": {},
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

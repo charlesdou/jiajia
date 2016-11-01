@@ -1,0 +1,17 @@
+{
+  "description": "删除好友",
+  "protocol": "",
+  "method": "delete",
+  "path": "friend/:userid",
+  "params": {
+    "userid":"16788909222"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

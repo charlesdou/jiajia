@@ -1,0 +1,22 @@
+{
+  "description": "添加回复",
+  "protocol": "",
+  "method": "post",
+  "path": "reply/:weiboid/:commentid",
+  "params": {
+    "weiboid": "5800fdab94bbd54e3af389e5",
+    "commentid": "5800feec94bbd54e3af389f3"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "content": "那是,也不看看谁发的,哈哈5"
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "_id": "5800ff7994bbd54e3af389fd"
+  }
+}

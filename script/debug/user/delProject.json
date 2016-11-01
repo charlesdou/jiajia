@@ -1,0 +1,18 @@
+{
+  "description": "删除项目经历",
+  "protocol": "",
+  "method": "delete",
+  "path": "resume/:resumeid/project/:projectid",
+  "params": {
+    "resumeid": "57c42aa72103c9fa12328850",
+    "projectid": "57c436252103c9fa12328854"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

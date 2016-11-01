@@ -1,0 +1,25 @@
+{
+  "description": "群组踢人",
+  "protocol": "",
+  "method": "delete",
+  "path": "group/:groupid/users",
+  "params": {
+    "groupid": "57e26c47ecfdc924650238b9"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "users": [
+      "57e239f6e97b4ca1623462db",
+      "57e23a80e97b4ca1623462dc"
+    ]
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "_id": "57e26c47ecfdc924650238b9",
+    "members": 1
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "description": "投诉",
+  "protocol": "",
+  "method": "put",
+  "path": "allegation/:weiboid",
+  "params": {
+    "weiboid": "57e61b15387f4aad6da978b2"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "reason": "很黄,很暴力"
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "errcode": 13003,
+    "errmsg": "您已经举报过该微博，不能重复举报"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "description": "用手机号或者邮箱或者昵称搜索好友",
+  "protocol": "",
+  "method": "get",
+  "path": "searchfriend",
+  "params": {},
+  "query": {
+    "key": "13818863223"
+  },
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "_id": "57e239f6e97b4ca1623462db",
+    "nickname": "小恶魔",
+    "img_headportrait": "/home/57e239f6e97b4ca1623462db/20160921/upload_a8b6b1ef01e9eb54a279be959658f527.jpg"
+  }
+}

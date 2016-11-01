@@ -1,0 +1,21 @@
+{
+  "description": "",
+  "protocol": "",
+  "method": "put",
+  "path": "resume/:resumeid/skill/:skillid",
+  "params": {
+    "resumeid": "57c42aa72103c9fa12328850",
+    "skillid": "57c431892103c9fa12328852"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "name": "python",
+    "assessment": 5
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

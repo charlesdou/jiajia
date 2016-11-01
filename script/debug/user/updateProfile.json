@@ -1,0 +1,30 @@
+{
+  "description": "编辑用户详情",
+  "protocol": "",
+  "method": "put",
+  "path": "profile",
+  "params": {},
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "nickname": "小色狼",
+    "signature": "快乐是生活之本",
+    "name": "韦峰",
+    "birthday": 19871101,
+    "sex": 0,
+    "university": "上海应用技术学院",
+    "majority": "计算机科学技术与信息工程",
+    "degree": 1,
+    "moto": "有志者，事竟成",
+    "province": "上海",
+    "qq": "333333",
+    "email": "qq@163.com",
+    "blog": "http://sunrisin.com",
+    "address": "上海市徐汇区龙漕路3300弄33号301"
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

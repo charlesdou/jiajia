@@ -1,0 +1,84 @@
+@charset "gb2312";
+@import "common.scss";
+
+body{ font:14px/1.5 Arial,\5FAE\8F6F\96C5\9ED1,\5b8b\4f53;background:#fff; color:#{$global_default_color};}
+html,body,p,dl,dt,dd,table,td,th,input,img,form,div,span,ul,ol,li,h1,h2,h3,h4,h5,h6,select,fieldset,fieldset,input,button,sub,sup,textarea{margin:0;padding:0; }
+table {border-collapse:collapse; border-spacing:0;}
+h1,h2,h3,h4,h5,h6 {font-size:100%;} 
+iframe,img{ border:0 none;}
+img{ vertical-align:middle;}
+em,i{font-style: normal;}
+ul,li,ol{list-style:none outside none;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{*zoom:1;}
+a{ text-decoration:none;color:#{$default_link_color}}
+a:hover{ text-decoration:none;color:#{$hover_link_color}}
+:focus { outline:0;}
+.clear{ clear:both; overflow:hidden; font-size:0; height:0;line-height:0;}
+.right { float:right}
+.left { float:left}
+
+input,textarea,select { background-color:#fff}
+input::-ms-clear{display:none;}
+
+@import "_include/header.scss";
+@import "_include/footer.scss";
+@import "_include/iconfont.scss";
+@import "_include/btn.scss";
+@import "_include/mod.scss";
+@import "_include/newsList.scss";
+@import "_include/form.scss";
+@import "_include/page.scss";
+@import "_include/offerList.scss";
+@import "_include/popWin.scss";
+@import "_include/spacing.scss";
+
+
+.tab-plugin{
+  .tab-plugin-con{
+    display: none;
+  }
+}
+
+.global_boxCon{
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.wrapper{
+	@include setGlobalWidth;
+	.box,.main{
+		width: 940px;
+		margin: 0 auto;
+	}
+	.main{
+		padding-bottom: 50px;
+		.mainCon{
+			background:#fafafa;
+			margin-top: 30px;
+		}
+	}
+}
+
+.publishEditBtn{
+	height: 46px;
+	padding: 30px 45px 0;
+	a{
+		padding: 0 25px;
+		&.editBtn{
+			float: right;
+		}
+		&.publishBtn{
+			float: left;
+		}
+	}
+}
+
+
+.scrollPic{
+	.scrollCon{
+		width: 100%;
+		overflow: hidden;
+	}
+}

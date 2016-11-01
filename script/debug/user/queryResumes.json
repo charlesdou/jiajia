@@ -1,0 +1,18 @@
+{
+  "description": "获取所有简历ID",
+  "protocol": "",
+  "method": "get",
+  "path": "resume",
+  "params": {},
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": [
+    "57e22e459dcb6b9d615d1ac0",
+    "57e22e469dcb6b9d615d1ac1"
+  ]
+}

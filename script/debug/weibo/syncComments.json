@@ -1,0 +1,22 @@
+{
+  "description": "同步评论",
+  "protocol": "",
+  "method": "post",
+  "path": "sync/comments/:weiboid",
+  "params": {
+    "weiboid": "57ff21a2e0d86af873049a82"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "down": true
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "errcode": 13000,
+    "errmsg": "该微博不存在，可能已被博主删除"
+  }
+}

@@ -1,0 +1,21 @@
+{% extends "../template/common.html" %}
+
+{% block title %}所有角色{% endblock %}
+
+{% block main %}
+{% for actions in rolegroups %}
+<div class="row">
+    <h1 style="font-size: 25px">{{ loop.key }}</h1>
+    <hr>
+    {% for action in actions %}
+    <div class="col-md-2">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" data-one="one" value="{{ action['_id'] }}"><a class="role" href="/admin/role/action?_id={{ action['_id'] }}">{{ action["name"] }}</a>
+            </label>
+        </div>
+    </div>
+    {% endfor %}
+</div><br><br>
+{% endfor %}
+{% endblock %}

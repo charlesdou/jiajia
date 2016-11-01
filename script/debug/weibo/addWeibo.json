@@ -1,0 +1,32 @@
+{
+  "description": "添加微博（ 包括图文微博、简单投票、投票贴）",
+  "protocol": "",
+  "method": "post",
+  "path": "",
+  "params": {},
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "form",
+  "req_body": {
+    "subject": "测试添加简投",
+    "text_options_0": "选项A",
+    "img_option_options_0": "./multimedia/1.jpg",
+    "text_options_1": "选项B",
+    "img_option_options_1": "./multimedia/2.jpg",
+    "text_options_2": "选项C",
+    "img_option_options_2": "./multimedia/3.png",
+    "maxchoose": 2,
+    "type": 1
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "_id": "5800fdab94bbd54e3af389e5",
+    "options": [
+      "5800fdab94bbd54e3af389e6",
+      "5800fdab94bbd54e3af389e7",
+      "5800fdab94bbd54e3af389e8"
+    ]
+  }
+}

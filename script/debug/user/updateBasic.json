@@ -1,0 +1,24 @@
+{
+  "description": "修改简历基本信息",
+  "protocol": "",
+  "method": "put",
+  "path": "resume/:resumeid/basic",
+  "params": {
+    "resumeid": "57e22e469dcb6b9d615d1ac1"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "province": "上海",
+    "phone": "56683587",
+    "email": "13917618429@163.com",
+    "address": "上海市宝山区祁华路",
+    "degree": 2,
+    "introduction": "酷爱编程的我。"
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

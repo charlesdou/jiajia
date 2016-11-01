@@ -1,0 +1,154 @@
+基础URL：http://www.sunrisin.com:8088
+
+统一访问错误回复
+{
+	"errcode":<int>,     错误码
+	"errmsg":<string>     错误描述
+}
+
+公共头:{
+	x-ua:<int>     1 iPhone 2 iPad 3 android-phone 4 android-pad 5 other
+	x-sid:<string>     用户sessionid
+}
+
+path前缀: sso
+
+1.{
+  "description": "忘记密码",
+  "protocol": "",
+  "method": "put",
+  "path": "mobile/password2",
+  "params": {},
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "id": "13917618429",
+    "password": "doudou1",
+    "identifyingcode": "384612",
+    "purpose": 1
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}
+
+
+2.{
+  "description": "获取验证码",
+  "protocol": "",
+  "method": "get",
+  "path": "mobile/identifyingcode",
+  "query": {
+    "id": "13671910611",
+    "purpose": 0
+  },
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "identifyingcode": "624178"
+  }
+}
+
+
+3.{
+  "description": "用户登录",
+  "protocol": "",
+  "method": "post",
+  "path": "mobile/login",
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "id": "13917618429",
+    "password": "doudou"
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "_id": "57e1530abef390d05e294797",     用户系统ID
+    "username":"13917618429",     用户名（手机号，邮箱）
+    "password": "doudou",
+    "dt_lastLogin": 1474394266766,     上一次登录时间
+    "dt_registration": 1474384650760,
+    "logintype": 0,     登录方式  0 手机号登录 2 邮箱登录 3 微信登录 4 新浪微博登录 5 QQ登录
+    "sessionid": "jiajia.user.session.bcccaae0-7f5b-11e6-93fa-05781640f42c"    用户sessionid
+  }
+}
+
+
+4.{
+  "description": "退出登录",
+  "protocol": "",
+  "method": "delete",
+  "path": "logout",
+  "params": {},
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}
+
+
+5.{
+  "description": "用户注册",
+  "protocol": "",
+  "method": "post",
+  "path": "mobile/registration",
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "id": "13671910611",
+    "password": "weifeng",
+    "identifyingcode": "624178",
+    "purpose": 0
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "username": "13671910611",
+    "password": "weifeng",
+    "dt_lastLogin": 1474443904363,
+    "dt_registration": 1474443904363,
+    "logintype": 0,
+    "_id": "57e23a80e97b4ca1623462dc",
+    "sessionid": "jiajia.user.session.4f1d58e0-7fcf-11e6-ac1b-6316572605e8"
+  }
+}
+
+
+6.{
+  "description": "修改密码",
+  "protocol": "",
+  "method": "put",
+  "path": "mobile/password1",
+  "params": {},
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "id": "13917618429",
+    "oldpassword": "doudou1",
+    "password": "doudou",
+    "identifyingcode": "423437",
+    "purpose": 1
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}
+
+

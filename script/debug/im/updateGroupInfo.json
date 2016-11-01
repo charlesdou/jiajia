@@ -1,0 +1,21 @@
+{
+  "description": "修改群组信息",
+  "protocol": "",
+  "method": "put",
+  "path": "group/:groupid",
+  "params": {
+    "groupid": "57e26c92ecfdc924650238bb"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "groupname": "加加网赶工组",
+    "desc": "大家加油，赶快赶工",
+    "maxusers": 300
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

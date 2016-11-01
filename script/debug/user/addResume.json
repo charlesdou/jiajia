@@ -1,0 +1,39 @@
+{
+  "description": "添加简历",
+  "protocol": "",
+  "method": "post",
+  "path": "resume",
+  "params": {},
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "img_headportrait": "/home/57e1530abef390d05e294797/20160921/upload_d57222b7ba2bd2e5813c362befd404a1.jpg",
+    "userid": "57e1530abef390d05e294797",
+    "name": "窦晨超",
+    "sex": 0,
+    "degree": 2,
+    "birthday": 19870922,
+    "province": "上海",
+    "address": "上海市闸北区场中路3300弄55号201室",
+    "introduction": "",
+    "phone": "",
+    "email": "13917618429@163.com",
+    "dt_create": 1474440774982,
+    "education": [],
+    "skill": [],
+    "job": [],
+    "project": [],
+    "expectation": {
+      "position": "",
+      "city": "",
+      "salary": 0,
+      "supplementary": ""
+    },
+    "_id": "57e22e469dcb6b9d615d1ac1"
+  }
+}

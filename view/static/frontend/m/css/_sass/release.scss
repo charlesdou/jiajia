@@ -1,0 +1,55 @@
+@charset "gb2312";
+@import "common.scss";
+@import "_include/var.scss";
+
+.releaseMessage{
+	.tit{
+		background: #eee;
+		line-height: rem-calc(50px);
+		height: rem-calc(50px);
+		overflow: hidden;
+		padding: 0 rem-calc(20px);
+		input{
+			width: 100%;
+			padding: rem-calc(10px) 0;
+			line-height: rem-calc(30px);
+			height: rem-calc(30px);
+			font-size: rem-calc(24px);
+			border: 0 none; 
+			background: none;
+		}
+	}
+	.textareaCon{
+		position: relative;
+		text-align: left;
+		font-size: rem-calc(24px);
+		.textarea{
+			min-height: rem-calc(240px);
+			width: 100%;
+			padding: rem-calc(10px) rem-calc(20px);
+			word-wrap: break-word;
+			@include setCssAttr("box-sizing","border-box");
+			position: relative;
+			z-index: 10;
+		}
+		.sPlaceholder{
+			color: #999;
+			display: block;
+			position: absolute;
+			top: rem-calc(10px);
+			left: rem-calc(20px);
+			z-index: 1;
+		}
+	}
+	.addOther{
+		height: rem-calc(60px);
+		width: rem-calc(400px);
+		line-height: rem-calc(60px);
+		background:#c9333f;
+		display: block;
+		margin:rem-calc(20px) auto 0;
+		color: #fff;
+		font-size: rem-calc(32px);
+		@include setCssAttr("border-radius",rem-calc(5px));
+	}
+}

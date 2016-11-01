@@ -1,0 +1,17 @@
+{
+  "description": "退群",
+  "protocol": "",
+  "method": "delete",
+  "path": "group/:groupid/users/leave",
+  "params": {
+    "groupid":"57bb43f642db3d3e577429f1"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

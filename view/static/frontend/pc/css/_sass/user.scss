@@ -1,0 +1,498 @@
+@charset "gb2312";
+@import "common.scss";
+
+.global_input{
+	line-height:42px;
+	height: 42px;
+	input{
+		padding: 10px 0;
+	}
+}
+
+.mod{
+	.th{
+		.sMark{
+			background:#fff;
+			color: #333;
+		}
+		.pFun{
+			position: absolute;
+			top: 0;
+			right: 0;
+			background: #fff;
+			padding:0 0 0 5px;
+			height: 60px;
+			z-index: 10;
+			a{
+				float: left;
+				color: #00b98d;
+				.iconfont{
+					color: #00b98d;
+					padding-right: 3px;
+					line-height: 60px;
+					font-size: 12px;
+				}
+				&:hover{
+					color: #{$hover_link_color};
+					.iconfont{
+						color: #{$hover_link_color};
+					}
+				}
+			}
+		}
+	}
+}
+
+.dlForm{
+	padding:0 50px;
+	dt{
+		line-height: 36px;
+		font-size: 18px;
+		height: 36px;
+		padding-top: 20px;
+	}
+	.ddBtn{
+		padding:20px 100px 0;
+	}
+	.global_file{
+		padding-top: 10px;
+		line-height: 52px;
+		.global_file_btn{
+			line-height: 50px;
+			height: 50px;
+			span{
+				height: 50px;
+				.iconfont{
+					height: 50px;
+					font-size: 24px;
+					line-height: 50px;
+				}
+			}
+		}
+	}
+}
+
+.userForm{
+	//padding: 0 50px;
+	.sTit{
+		display: block;
+		line-height: 36px;
+		height: 36px;
+		padding-bottom: 20px;
+		text-align: center;
+		font-size: 16px;
+	}
+	.pCompetence{
+		text-align: center;
+		span{
+			display: block;
+			line-height: 30px;
+			height: 30px;
+		}
+	}
+	ul{
+		li{
+			padding: 0 0 20px 0;
+			width: 100%;
+			float: left;
+			.sTips{
+				display: block;
+				height: 30px;
+				line-height: 30px;
+				color: #cc3742;
+				.iconfont{
+					color: #cc3742;
+					padding-right: 3px;
+					line-height: 30px;
+				}
+			}
+			.global_select{
+				width: auto;
+				float: none;
+				height: 42px;
+				line-height: 42px;
+				select{
+					line-height: 42px;
+				}
+			}
+			.sBtnDes{
+				line-height: 30px;
+				height: 30px;
+				color: #999;
+				display: block;
+				text-align: center;
+				padding: 10px 0 0 0;
+			}
+			.addBtn{
+				float: left;
+				color: #00b98d;
+				&:hover{
+					color: #{$hover_link_color};
+				}
+			}
+			.aNum{
+				float: right;
+				color: #999;
+				em{
+					color: #cc3742;
+				}
+			}
+			.global_area{
+				textarea{
+					font-size: 14px;
+					height: 72px;
+				}
+			}
+			.pBtn{
+				padding: 20px 0 0 0;
+				.prevBtn{
+					float: left;
+					line-height: 42px;
+					color: #999;
+					font-size: 16px;
+					&:hover{
+						color: #{$hover_link_color};
+					}
+				}
+				.globalBtn{
+					float: right;
+					padding: 0 20px;
+				}
+			}
+		}
+	}
+}
+
+.badgeList{
+	width: 420px;
+	margin:0 auto;
+	li{
+		width: 360px;
+		float: left;
+		background:#eee;
+		padding: 15px 30px;
+		@include setCssAttr("border-radius","10px");
+		margin: 10px 0 0 0;
+		display: inline;
+		.pic{
+			float: left;
+			width: 50px;
+			img{
+				width: 50px;
+				height: 50px;
+			}
+		}
+		.txt{
+			width: 290px;
+			float: right;
+			span{
+				&.sDes{
+					line-height: 24px;
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+.noResume{
+	padding:0 50px;
+	text-align: center;
+	.sDes{
+		display: block;
+		line-height: 36px;
+		height: 36px;
+		padding: 20px 0;
+	}
+	.globalBtn{
+		width: 110px;
+		padding:0;
+		margin: 0 auto;
+	}
+}
+
+.leftCon{
+	width: 230px;
+	float: left;
+	margin-right: 20px;
+	display: inline;
+	.userMenu{	
+		a{
+			float: left;
+			width: 100%;
+			line-height: 48px;
+			height: 48px;
+			overflow: hidden;
+			text-align: center;
+			display: block;
+			color: #{$global_default_color};
+			font-size: 16px;
+			background:#fafafa;
+			&:hover{
+				color: #{$global_default_color};
+			}
+			&.cur,&.cur:hover{
+				background: #{$hover_link_color};
+			}
+		}
+	}
+}
+
+.middleCon{
+	width: 470px;
+	float: left;
+	.bannerCon{
+		padding-top: 20px;
+		background-repeat: no-repeat;
+		background-position: center 0;
+		@include setCssAttr("box-shadow","0 15px 15px -9px rgba(0,0,0,0.3) inset");
+		.userPhoto{
+			width: 54px;
+			height: 54px;
+			padding: 5px;
+			display: block;
+			overflow: hidden;
+			margin: 0 auto;
+			@include setCssAttr("border-radius","100%");
+			background:rgba(255,255,255,0.3);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4Cffffff,endColorstr=#4Cffffff);
+			img,.sUpload{
+				width: 100%;
+				height: 100%;
+				vertical-align: top;
+				display: block;
+				text-align: center;
+				background: #fff;
+				color: #333;
+				line-height: 54px;
+				font-size: 12px;
+				white-space: nowrap;
+				overflow: hidden;
+				@include setCssAttr("border-radius","100%");
+			}
+		}
+	}
+	.userIntro{
+		padding-bottom: 20px;
+		span{
+			display: block;
+			line-height: 24px;
+			text-align: center;
+			&.sName{
+				font-size: 24px;
+				line-height: 48px;
+			}
+			&.sTips{
+				font-size: 16px;
+				line-height: 36px;
+			}
+			&.sDes{
+				color: #999;
+				.iconfont{
+					font-size: 14px;
+					color: #999;
+				}
+				em{
+					padding:0 5px;
+				}
+			}
+		}
+		
+	}
+	.introList{
+		li{
+			width: 100%;
+			float: left;
+			display: inline;
+			padding-bottom: 20px;
+			p{
+				width: 100%;
+				float: left;
+			}
+			.pTit{
+				line-height: 30px;
+				height: 30px;
+				font-size: 16px;
+				.companyName{
+					float: left;
+				}
+				.aEdit{
+					float: right;
+					color: #00b98d;
+					font-size: 14px;
+					.iconfont{
+						color: #00b98d;
+						padding-right: 3px;
+						line-height: 30px;
+						font-size: 14px;
+					}
+					&:hover{
+						color: #{$hover_link_color};
+						.iconfont{
+							color: #{$hover_link_color};
+						}
+					}
+				}
+			}
+			.pDes{
+				color: #999;
+				padding: 0 0 10px 0;
+				span{
+					line-height: 24px;
+					&.sJob{
+						float: left;
+						width: 260px;
+					}
+					&.sTime{
+						float: right;
+					}
+				}
+				
+			}
+		}
+	}
+
+	
+}
+
+.rightCon{
+	width: 200px;
+	float: right;
+	.uploadBtn{
+		line-height: 48px;
+		height: 48px;
+		text-align: center;
+		background: #fafafa;
+		display: block;
+		color: #{$global_default_color};
+		.iconfont{
+			padding-right: 5px;
+			font-size: 14px;
+		}
+		&:hover{
+			color: #{$hover_link_color};
+		}
+	}
+	.resumeCon{
+		background: #fafafa;
+		padding: 10px 10px 15px 10px;
+		.pTxt{
+			line-height: 24px;
+			height: 24px;
+			padding-bottom:10px;
+			font-size: 12px;
+			.previewBtn{
+				float: right;
+				color: #00b98d;
+				&:hover{
+					color: #{$hover_link_color};
+				}
+			}
+			.sNum{
+				float: left;
+				em{
+					color: #00b98d;
+				}
+			}
+		}
+		.sProgressBar{
+			width: 100%;
+			line-height: 0;
+			font-size: 0;
+			height: 6px;
+			overflow: hidden;
+			background: #eee;
+			display: block;
+			@include setCssAttr("border-radius","6px");
+			em{
+				float: left;
+				background: #00b98d;
+				height: 6px;
+				font-size: 0;
+				line-height: 0;
+				overflow: hidden;
+				@include setCssAttr("border-radius","6px");
+			}
+		}
+	}
+
+	.funList{
+		li{
+			width: 100%;
+			float: left;
+			display: inline;
+			line-height: 42px;
+			height: 42px;
+			position: relative;
+			.aClose{
+				position: absolute;
+				width: 16px;
+				height: 16px;
+				overflow: hidden;
+				line-height: 16px;
+				text-align: center;
+				top: 50%;
+				right: 10px;
+				margin-top: -8px;
+				display: none;
+				.iconfont{
+					width: 16px;
+					height: 16px;
+					overflow: hidden;
+					text-align: center;
+					font-size: 14px;
+					color: #666;
+				}
+			}
+			.aFun{
+				padding-left: 2px;
+				display: block;
+				color: #{$global_default_color};
+				.iconfont{
+					float: left;
+					padding:0 10px 0 10px;
+					height: 42px;
+					line-height: 42px;
+					color: #{$global_default_color};
+				}
+				&:hover{
+					color: #{$hover_link_color};
+					.iconfont{
+						color: #{$hover_link_color};
+					}
+				}
+			}
+			&.hover,&:hover{
+				background: #f5f5f5;
+				.aClose{
+					display: block;
+				}
+			}
+			&.cur,&.cur:hover{
+				background: #f5f5f5;
+				.aFun{
+					color: #00b98d;
+					padding-left:0;
+					border-left: 2px solid #00b98d;
+					.iconfont{
+						color: #00b98d;
+					}
+					&:hover{
+						color: #00b98d;
+						.iconfont{
+							color: #00b98d;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+

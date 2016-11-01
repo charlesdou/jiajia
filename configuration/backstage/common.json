@@ -1,0 +1,48 @@
+{
+  "cookie_secret": "jiajia.backstage",
+  "session_prefix":"jiajia.admin.session.",
+  "lefttree":[
+    {
+      "title":"用户管理",
+      "icon":"fa fa-users",
+      "href":"/user"
+    },
+    {
+      "title":"徽章管理",
+      "icon":"fa fa-gift",
+      "href":"/badge"
+    },
+    {
+      "title":"后台管理",
+      "icon":"fa fa-user",
+      "submenu":[
+        {
+          "title":"人员管理",
+          "icon":"fa fa-user-plus",
+          "href":"/admin"
+        },
+        {
+          "title":"角色管理",
+          "icon":"fa fa-user-secret",
+          "href":"/role"
+        }
+      ]
+    },
+    {
+      "title":"慈善募捐",
+      "icon":"fa fa-heart",
+      "submenu":[
+        {
+          "title":"募捐项目",
+          "icon":"fa fa-credit-card-alt",
+          "href":"/donation"
+        },
+        {
+          "title":"募捐金额",
+          "icon":"fa fa-credit-card",
+          "href":"/donation/payment"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{% extends "../template/common.html" %}
+
+{% block title %}角色管理{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+    function deleteRole(){
+        var allNodes=$("[data-one]")
+        var arrStrDeletedRoles=[]
+        allNodes.each(function(){
+            if($(this).is(":checked")){
+                arrStrDeletedRoles.push($(this).val())
+            }
+        })
+
+        if(arrStrDeletedRoles.length==0){
+            alert("您还未选择需要删除的角色！")
+            return
+        }
+
+        if(confirm("您确定需要删除您所选择的角色吗？")){
+            $.ajax({
+                url:"/admin/role",
+                type:"DELETE",
+                data:{
+                    ids:arrStrDeletedRoles,
+                    actions:arrStrDeletedRoles
+                },
+                success:function(data){
+                    location.assign("/admin/role")
+                }
+            })
+        }
+    }
+
+    function selectGroupAll(id){
+        var objGroupAllNode=$(id)
+        var arrActionNodes=objGroupAllNode.parent().parent().parent().parent().find("[data-one]")
+        var isChecked=objGroupAllNode.is(":checked")
+        arrActionNodes.each(function(){
+            $(this).prop("checked",isChecked)
+        })
+    }
+
+    function selectAll(){
+        var allNodes=$("[data-one]")
+        var allNodes1=$("[data-all]")
+        allNodes.each(function(){
+            $(this).prop("checked",true)
+        })
+        allNodes1.each(function(){
+            $(this).prop("checked",true)
+        })
+    }
+
+    function deselectAll(){
+        var allNodes=$("[data-one]")
+        var allNodes1=$("[data-all]")
+        allNodes.each(function(){
+            $(this).prop("checked",false)
+        })
+        allNodes1.each(function(){
+            $(this).prop("checked",false)
+        })
+    }
+
+    function addRole(){
+        var groupname=$("#groupName").val()
+        var rolename=$("#roleName").val()
+        if(!groupname || !rolename){
+            alert("组名和角色名不能为空")
+        }else{
+            $.post("/admin/role",{group:groupname,name:rolename},function(data){
+                if(data["errmsg"]){
+                    alert(data["errmsg"])
+                }else{
+                    location.assign("/admin/role")
+                }
+            })
+        }
+    }
+
+</script>
+{% endblock %}
+
+{% block funcbar %}
+<div class="col-md-1">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addRoleDialog">添加</button>
+</div>
+<div class="col-md-1">
+    <button type="button" class="btn btn-danger" onclick="deleteRole()">删除</button>
+</div>
+<div class="col-md-1">
+    <button type="button" class="btn btn-primary" onclick="selectAll()">全选</button>
+</div>
+<div class="col-md-1">
+    <button type="button" class="btn btn-primary" onclick="deselectAll()">全不选</button>
+</div>
+{% endblock %}
+
+{% block main %}
+<div class="modal fade" id="addRoleDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">添加角色</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="GroupName">Group</label>
+                        <input type="text" class="form-control" id="groupName" placeholder="Group">
+                    </div>
+                    <div class="form-group">
+                        <label for="RoleName">Role</label>
+                        <input type="text" class="form-control" id="roleName" placeholder="Group">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="btAddRole" onclick="addRole()">添加</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% for actions in rolegroups %}
+<div class="row">
+    <h1 style="font-size: 25px">{{ loop.key }}</h1>
+    <hr>
+    <div class="col-md-12">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" data-all="all" onclick="selectGroupAll(this)"> 全选/反选
+            </label>
+        </div>
+    </div>
+    {% for action in actions %}
+    <div class="col-md-2">
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" data-one="one" value="{{ action['_id'] }}"><a class="role" href="/admin/role/action?_id={{ action['_id'] }}">{{ action["name"] }}</a>
+            </label>
+        </div>
+    </div>
+    {% endfor %}
+</div><br><br>
+{% endfor %}
+{% endblock %}

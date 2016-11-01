@@ -1,0 +1,39 @@
+@charset "gb2312";
+@import "common.scss";
+@import "_include/var.scss";
+
+
+//reset param
+$bodyColor: #333333;
+$bodyBgColor: #fff;
+$font: "#{rem-calc(18px)}/1.5 Microsoft Yahei, sans-serif";
+$linkColor: #333;
+$linkColorHover: #333;
+@include reset($bodyColor, $bodyBgColor, $font, $linkColor, $linkColorHover);
+
+html,body{
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  @include setCssAttr("text-size-adjust","100%");
+}
+
+input::-ms-clear{display:none;}
+input[type="submit"],input[type="reset"],input[type="button"],button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+a{ 
+  @include setCssAttr("tap-highlight-color","rgba(0,0,0,0.5)");
+}
+
+
+@import "_include/header.scss";
+@import "_include/sheader.scss";
+@import "_include/footer.scss";
+@import "_include/iconfont.scss";
+@import "_include/featuresList.scss";

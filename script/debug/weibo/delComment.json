@@ -1,0 +1,18 @@
+{
+  "description": "删除评论",
+  "protocol": "",
+  "method": "delete",
+  "path": "comment/:weiboid/:commentid",
+  "params": {
+    "weiboid": "57e61b15387f4aad6da978b2",
+    "commentid": "57e628c2b0f3f1386eb7133d"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

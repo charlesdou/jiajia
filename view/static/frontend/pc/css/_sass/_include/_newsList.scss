@@ -1,0 +1,234 @@
+.newsList{
+	padding-bottom: 60px;
+	.newsCon{
+		width: 100%;
+		float: left;
+		position: relative;
+		margin-top: 40px;
+		display: inline;
+		.newsConTab{
+			span{
+				line-height: 50px;
+				padding:1px 51px 0;
+				float: left;
+				display: inline;
+				font-size: 18px;
+				&.cur{
+					@include setCssAttr("border-top-left-radius","5px");
+					@include setCssAttr("border-top-right-radius","5px");
+					padding:0 50px;
+					border: 1px solid #cc3742;
+					border-bottom: 0px;
+				}
+			}
+			
+		}
+		.sPhoto{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 70px;
+			height: 70px;
+			overflow: hidden;
+			@include setCssAttr("border-radius","70px");
+			img{
+				display: block;
+				vertical-align: top;
+			}
+		}
+		.newsTit{
+			height: 40px;
+			line-height: 40px;
+			overflow: hidden;
+			padding-left: 90px;
+			.sName{
+				float: left;
+				font-size: 18px;
+			}
+		}
+		.newsStatus{
+			position: relative;
+			height: 70px;
+			padding: 30px 0;
+			.sPhoto{
+				top: 30px;
+				left: 20px;
+			}
+			.pTit{
+				width: 500px;
+				float: left;
+				line-height: 35px;
+				padding: 0 0 0 120px;
+				span{
+					display: block;
+				}
+				.sTit{
+					font-size: 18px;
+					color: #666;
+				}
+				.sDes{
+					color: #666;
+					font-size: 16px;
+				}
+			}
+			.pStatus{
+				width: 270px;
+				float: right;
+				text-align: center;
+				span{
+					display: block;
+					line-height: 35px;
+					font-size: 20px;
+				}
+				.noPass{
+					color: #cc3742;
+					line-height: 70px;
+				}
+			}
+		}
+		.newsTxt{
+			padding:0 10px;
+			border: 1px solid #c5202e;
+			border-top-width: 3px;
+			//@include setCssAttr("border-top-left-radius","6px");
+			background: #fff;
+			.itemTxt{
+				padding: 10px  0 0 50px;
+				.pTit{
+					line-height: 40px;
+					height: 40px;
+					overflow: hidden;
+					span{
+						float: left;
+						&.sName{
+							width: 28%;
+							a{
+								color: #{$global_default_color};
+								&:hover{
+									color: #{$hover_link_color};
+								}
+							}
+						}
+						&.sPeriod{
+							width: 30%;
+						}
+						&.sMoney{
+							width: 26%;
+						}
+					}
+				}
+				.pIntro{
+					padding: 5px 40px 10px 0;
+					line-height: 26px;
+				}
+			}
+			.jobTxt{
+				border-top: 1px solid #cc3742;
+				.jobBasicData{
+					position: relative;
+					padding:10px 60px 10px 0;
+					table{
+						width: 100%;
+						th,td{
+							line-height: 24px;
+							text-align: center;
+						}
+						th{
+							font-weight: 700;
+						}
+						.style{
+							width: 22%;
+						}
+						.money{
+							width: 22%;
+						}
+						.offerNum{
+							width: 15%;
+						}
+						.address{
+							width: 25%;
+						}
+						.applyNum{
+
+						}
+					}
+					.globalArrowBtn{
+						position: absolute;
+						right: 0;
+						top: 0;
+					}
+				}
+				.moreJobIntro{
+					line-height: 24px;
+					padding: 0 140px 10px 50px;
+					display: none;
+					position: relative;
+					.pBtn{
+						position: absolute;
+						top: 10px;
+						right: 0;
+						.globalBtn_42{
+							width: 104px;
+							display: block;
+						}
+						.aCollectBtn,.aHasCollectBtn{
+							width: 104px;
+							display: block;
+							color: #333;
+							line-height: 36px;
+							height: 36px;
+							margin-top: 10px;
+							.iconfont{
+								color: #333;
+								line-height: 36px;
+								height: 36px;
+								font-size: 18px;
+								float: left;
+								padding: 0 3px 0 15px;
+							}
+						}
+						.aHasCollectBtn{
+							color: #{$hover_link_color};
+							.iconfont{
+								color: #{$hover_link_color};
+							}
+						}
+					}
+					.sDes{
+						display: block;
+						color: #999;
+					}
+				}
+			}
+			.cur{
+				.moreJobIntro{
+					display: block;
+				}
+			}
+		}
+		
+
+	}
+
+}
+
+.newsTxt_p0{
+	.newsCon{
+		.newsTxt{
+			padding: 0;
+			.jobTxt{
+				.moreJobIntro{
+					right: 10px;
+				}
+			}
+			.jobTxtTit{
+				border-top:0 none;
+			}
+		}
+	}
+
+}
+
+
+
+

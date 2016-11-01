@@ -1,0 +1,22 @@
+{
+  "description": "转发",
+  "protocol": "",
+  "method": "put",
+  "path": "forward/:weiboid",
+  "params": {
+    "weiboid": "57e61b15387f4aad6da978b2"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "platform": 0
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "_id": "57e61b15387f4aad6da978b2",
+    "forwards": 2
+  }
+}

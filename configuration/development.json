@@ -1,0 +1,10 @@
+{
+  "mongodb_url":"mongodb://127.0.0.1:27017/maindb",
+  "redis_ip":"127.0.0.1",
+  "redis_port":6379,
+  "static_server_url":"/",
+  "listen_app_port":8088,
+  "server_ip":"127.0.0.1",
+  "verification_code_expire":604800000,
+  "log_url":"mongodb://127.0.0.1:27017/log"
+}

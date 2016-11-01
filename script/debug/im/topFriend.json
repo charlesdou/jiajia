@@ -1,0 +1,19 @@
+{
+  "description": "开启置顶聊天后关闭置顶聊天",
+  "protocol": "",
+  "method": "put",
+  "path": "friend/top/:userid",
+  "params": {
+    "userid": "57e239f6e97b4ca1623462db"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "isTopped": true
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

@@ -1,0 +1,19 @@
+{
+  "description": "用户认证",
+  "protocol": "",
+  "method": "put",
+  "path": "authentication",
+  "params": {},
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "form",
+  "req_body": {
+    "identification_code": "310108198709223814",
+    "img_identification_card1": "./multimedia/1.jpg",
+    "img_identification_card2": "./multimedia/2.jpg"
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>修改头像</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap -->
+    <link href="{{ staticUrl }}/3rdparty/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ staticUrl }}/3rdparty/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ staticUrl }}/common/css/global.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+  <div class="header">
+    <div class="left"><span class="sLogo"><a href="">logo</a></span></div>
+    <div class="right">
+      <ul class="userCon">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle aUser" data-toggle="dropdown" role="button" aria-expanded="false"><img src="http://img.wdjimg.com/mms/icon/v1/a/0e/197e74a6f0561325eb615198b79f10ea_256_256.png" alt="" class="userPhoto" width="40" height="40"><span class="sUnLogin">游客</span></a>
+        </li>
+      </ul>
+    </div>
+    
+  </div>
+
+  <div class="wrapper">
+    <div class="login">
+      
+      <form>
+        <div class="form-group">
+          <label for="inputFile">修改头像</label>
+          <div class="selectPhotoPic clearfix">
+            <button type="button" class="btn btn-info">选择头像</button>
+            <input type="file" id="inputFile">
+            <span class="sDes">请上传正方形图片</span>
+            <img src="http://img.wdjimg.com/mms/icon/v1/a/0e/197e74a6f0561325eb615198b79f10ea_256_256.png" alt="" class="userPhoto" width="40" height="40">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">&nbsp;&nbsp;确认&nbsp;&nbsp;</button>
+      </form>
+
+    </div>
+  </div>
+
+  
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{{ staticUrl }}/3rdparty/js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{ staticUrl }}/3rdparty/js/bootstrap.min.js"></script>
+
+  </body>
+</html>

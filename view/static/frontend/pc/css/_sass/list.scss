@@ -1,0 +1,87 @@
+@charset "gb2312";
+@import "common.scss";
+
+.workList{
+	padding: 20px 40px 40px;
+	li{
+		margin-top: 20px;
+		background:#efeeea;
+		width: 100%;
+		float: left;
+		padding: 40px 0;
+		height: 70px;
+		@include setCssAttr("border-radius","5px");
+		.sPhoto{
+			width: 70px;
+			height: 70px;
+			overflow: hidden;
+			@include setCssAttr("border-radius","70px");
+			float: left;
+			margin: 0 30px 0 45px;
+			display: inline;
+			img{
+				display: block;
+				vertical-align: top;
+			}
+		}
+		.pTxt{
+			width: 430px;
+			float: left;
+			span{
+				display: block;
+				overflow: hidden;
+				&.sTit{
+					font-size: 20px;
+					height: 40px;
+					line-height: 40px;
+					a{
+						color: #{$global_default_color};
+						&:hover{
+							color: #{$hover_link_color};
+						}
+					}
+				}
+				&.sDes{
+					line-height: 30px;
+					color: #565656;
+					font-size: 16px;
+					height: 30px;
+				}
+			}
+		}
+		.sTips{
+			width: 210px;
+			float: right;
+			text-align: right;
+			line-height: 70px;
+			height: 70px;
+			overflow: hidden;
+			margin-right: 45px;
+			display: inline;
+			font-size: 20px;
+			em{
+				&.red{
+					color: #cc3742;
+				}
+				&.green{
+					color: #469c00;
+				}
+			}
+		}
+	}
+}
+
+.offerListCon{
+	padding:11px 0 0 1px;
+	li{
+		border:1px solid #d5d5d5;
+		margin: -1px 0 0 -1px;
+		padding:9px 11px 0;
+		position: relative;
+		z-index: 5;
+		@include setCssAttr("border-radius","0");
+		&:hover{
+			z-index: 10;
+		}
+	}
+}

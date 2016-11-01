@@ -1,0 +1,23 @@
+{
+  "description": "添加教育经历",
+  "protocol": "",
+  "method": "post",
+  "path": "resume/:resumeid/education",
+  "params": {
+    "resumeid": "57c42aa72103c9fa12328850"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "university": "华东理工大学",
+    "degree": 2,
+    "majority": "计算机软件与理论",
+    "start": 201009,
+    "end": 201303
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": "57c44ac64116baaa143fe3f4"
+}

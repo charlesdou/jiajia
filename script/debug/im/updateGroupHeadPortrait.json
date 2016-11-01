@@ -1,0 +1,21 @@
+{
+  "description": "修改群组头像",
+  "protocol": "",
+  "method": "put",
+  "path": "group/:groupid/headportrait",
+  "params": {
+    "groupid": "57e26c92ecfdc924650238bb"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "form",
+  "req_body": {
+    "img_logo": "./multimedia/1.jpg"
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "img_logo": "/home/57e1530abef390d05e294797/20160921/upload_4ad10063bc11849cac61be45756c5478.jpg"
+  }
+}

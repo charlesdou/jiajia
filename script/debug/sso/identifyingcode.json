@@ -1,0 +1,19 @@
+{
+  "description": "获取验证码",
+  "protocol": "",
+  "method": "get",
+  "path": "mobile/identifyingcode",
+  "query": {
+    "id": "13917618429",
+    "purpose": 0
+  },
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "identifyingcode": "624178"
+  }
+}

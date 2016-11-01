@@ -1,0 +1,24 @@
+{
+  "description": "添加项目经历",
+  "protocol": "",
+  "method": "post",
+  "path": "resume/:resumeid/project",
+  "params": {
+    "resumeid": "57c42aa72103c9fa12328850"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "project_name": "加加网",
+    "responsibility": "架构师",
+    "begin": 201603,
+    "end": 201606,
+    "description": "大学生公益平台项目",
+    "url": "http://www.sunrisin.com"
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": "57c44b204116baaa143fe3f6"
+}

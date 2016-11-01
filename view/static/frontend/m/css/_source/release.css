@@ -1,0 +1,13 @@
+@media only screen and (max-width: 359px) { html { font-size: 30px; } }
+@media only screen and (min-width: 360px) and (max-width: 374px) { html { font-size: 33px; } }
+@media only screen and (min-width: 375px) and (max-width: 399px) { html { font-size: 35px; } }
+@media only screen and (min-width: 400px) and (max-width: 479px) { html { font-size: 37px; } }
+@media only screen and (min-width: 480px) and (max-width: 539px) { html { font-size: 45px; } }
+@media only screen and (min-width: 540px) and (max-width: 639px) { html { font-size: 50px; } }
+@media only screen and (min-width: 640px) { html { font-size: 60px; } }
+.releaseMessage .tit { background: #eee; line-height: 0.83rem; height: 0.83rem; overflow: hidden; padding: 0 0.33rem; }
+.releaseMessage .tit input { width: 100%; padding: 0.17rem 0; line-height: 0.5rem; height: 0.5rem; font-size: 0.4rem; border: 0 none; background: none; }
+.releaseMessage .textareaCon { position: relative; text-align: left; font-size: 0.4rem; }
+.releaseMessage .textareaCon .textarea { min-height: 4rem; width: 100%; padding: 0.17rem 0.33rem; word-wrap: break-word; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -ms-box-sizing: border-box; -o-box-sizing: border-box; position: relative; z-index: 10; }
+.releaseMessage .textareaCon .sPlaceholder { color: #999; display: block; position: absolute; top: 0.17rem; left: 0.33rem; z-index: 1; }
+.releaseMessage .addOther { height: 1rem; width: 6.67rem; line-height: 1rem; background: #c9333f; display: block; margin: 0.33rem auto 0; color: #fff; font-size: 0.53rem; border-radius: 0.08rem; -moz-border-radius: 0.08rem; -webkit-border-radius: 0.08rem; -ms-border-radius: 0.08rem; -o-border-radius: 0.08rem; }

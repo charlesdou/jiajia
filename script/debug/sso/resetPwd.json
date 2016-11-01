@@ -1,0 +1,21 @@
+{
+  "description": "修改密码",
+  "protocol": "",
+  "method": "put",
+  "path": "mobile/password1",
+  "params": {},
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "id": "13917618429",
+    "oldpassword": "doudou1",
+    "password": "doudou",
+    "identifyingcode": "423437",
+    "purpose": 1
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

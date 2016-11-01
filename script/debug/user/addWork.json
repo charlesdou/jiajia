@@ -1,0 +1,23 @@
+{
+  "description": "添加工作经历",
+  "protocol": "",
+  "method": "post",
+  "path": "resume/:resumeid/job",
+  "params": {
+    "resumeid": "57c42aa72103c9fa12328850"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "company_name": "Erricsson",
+    "position": "C++工程师",
+    "start": 201507,
+    "end": -1,
+    "content": "esm cba"
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": "57c44b374116baaa143fe3f7"
+}

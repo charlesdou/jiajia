@@ -1,0 +1,18 @@
+{
+  "description":"删除教育经历",
+  "protocol": "",
+  "method": "delete",
+  "path": "resume/:resumeid/education/:educationid",
+  "params":{
+    "resumeid": "57c42aa72103c9fa12328850",
+    "educationid": "57c42dce2103c9fa12328851"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

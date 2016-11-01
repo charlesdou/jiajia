@@ -1,0 +1,24 @@
+{
+  "description": "修改工作经历",
+  "protocol": "",
+  "method": "put",
+  "path": "resume/:resumeid/job/:jobid",
+  "params": {
+    "resumeid": "57c42aa72103c9fa12328850",
+    "jobid": "57c433242103c9fa12328853"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "company_name": "Erricson",
+    "position": "C++工程师",
+    "start": 201507,
+    "end": -1,
+    "content": "esm cba1"
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

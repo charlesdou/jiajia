@@ -1,0 +1,19 @@
+{
+  "description": "删除回复",
+  "protocol": "",
+  "method": "delete",
+  "path": "reply/:weiboid/:commentid/:replyid",
+  "params": {
+    "weiboid": "57e61b15387f4aad6da978b2",
+    "commentid": "57e628c2b0f3f1386eb7133d",
+    "replyid": "57e629d51622bd6e6e8a15f6"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}
