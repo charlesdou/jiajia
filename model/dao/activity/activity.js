@@ -23,7 +23,7 @@ var objActivityRemarkColl=$objMongoColls["maindb"]["activity_remark"]
     dt_publish:<Datetime>,     //发布时间
     dt_end_enrollment:<Datetime>，     //报名截止日期
     dt_begin:<DateTime>,     //活动开始时间
-    dt_end:<DateTime>,     //互动结束时间
+    dt_end:<DateTime>,     //活动结束时间
     status:<int> //0 待审核 1：审核失败 2：报名中  3：报名截止  4：开始  5：结束  6：被取消
     _id_check_user:<ObjectID>     //审核者ID
     failure_reason:<string>,     //审核失败原因
@@ -220,7 +220,7 @@ $dao["activity"]["endEnrollment"]=function(activityid,funcCb){
     })
 }
 
-$dao["activity"]["begin"]=function(activityid,dtStartTime,funcCb){
+$dao["activity"]["begin"]=function(activityid,funcCb){
     async.waterfall([
         function(cb){
             objActivityColl.findOne({_id:activityid},{_id:0,status:1},function(err,rResult){
@@ -276,6 +276,73 @@ $dao["activity"]["end"]=function(activityid,funcCb){
     ],function(err,wResult){
         funcCb(err,wResult)
     })
+}
+
+$dao["activity"]["syncActivities"]=function(userid,obj,funcCb){
+
+}
+
+$dao["activity"]["details"]=function(userid,activityid,funcCb){
+    var objProjection={
+       _id_publish_user:0,
+       dt_begin:0,
+       dt_end:0,
+       _id_check_user:0,
+       failure_reason:0,
+       integral:0,
+       _id_badge:0
+    }
+
+    async.parallel([
+        function(cb){
+            objActivityColl.findOne({_id:activityid},{fields:objProjection},function(err,rResult){
+                if(err){
+                    cb({errcode:1001},null)
+                }else{
+                    cb(null,rResult)
+                }
+            })
+        },
+        function(cb){
+            objActivityEnrollmentColl.findOne({_id_activity:activityid,_id_user:userid},{fields:{_id:0,status:1}},function(err,rResult){
+                if(err){
+                    cb({errcode:1001},null)
+                }else{
+                    cb(null,rResult)
+                }
+            })
+        }
+    ],function(err,pResults){
+        if(err){
+            funcCb(err,null)
+        }else if(!pResults[1]){
+            pResults[0]["userstatus"]=-1
+            funcCb(null,pResults[0])
+        }else{
+            pResults[0]["userstatus"]=pResults[1]["status"]
+            funcCb(null,pResults[0])
+        }
+    })
+}
+
+$dao["activity"]["syncRemarks"]=function(userid,activityid,obj,funcCb){
+    
+}
+
+$dao["activity"]["activityUsers"]=function(userid,activityid,obj,funcCb){
+    
+}
+
+$dao["activity"]["onePageActivities"]=function(userid,intPage,intPerpage,obj,funcCb){
+    
+}
+
+$dao["activity"]["onePageRemarks"]=function(userid,intPage,intPerpage,obj,funcCb){
+    
+}
+
+$dao["activity"]["onePageUsers"]=function(userid,intPage,intPerpage,obj,funcCb){
+    
 }
 
 /*
