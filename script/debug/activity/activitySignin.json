@@ -1,0 +1,19 @@
+{
+  "description": "用户签到",
+  "protocol": "",
+  "method": "put",
+  "path": "signin/:_id_activity",
+  "params": {
+    "_id_activity": "582327df120f6e1c3f20e5df"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "participants": 1
+  }
+}

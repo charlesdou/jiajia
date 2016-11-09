@@ -1,0 +1,39 @@
+{
+  "description": "企业用户发布活动",
+  "protocol": "",
+  "method": "post",
+  "path": "",
+  "params": {},
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "form",
+  "req_body": {
+    "type": 1,
+    "title": "第一条活动",
+    "img_logo": "./multimedia/1.jpg",
+    "img_poster": "./multimedia/2.jpg",
+    "description": "调试而已，不要放在心上",
+    "dt_end_enrollment": 1481385600000,
+    "min_applies": 10
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "type": 1,
+    "_id_publish_user": "57e1530abef390d05e294797",
+    "title": "第一条活动",
+    "img_logo": "/home/57e1530abef390d05e294797/20161109/upload_503484abf9a0827ccdb3724fff366c78.jpg",
+    "img_poster": "/home/57e1530abef390d05e294797/20161109/upload_fd0c1ecc599e0f98326029f3c342f890.jpg",
+    "description": "调试而已，不要放在心上",
+    "dt_publish": 1478698937360,
+    "applies": 0,
+    "participants": 0,
+    "completes": 0,
+    "min_applies": 10,
+    "remarks": 0,
+    "dt_end_enrollment": 1481385600000,
+    "status": 0,
+    "_id": "582327df120f6e1c3f20e5df"
+  }
+}

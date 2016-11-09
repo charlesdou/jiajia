@@ -83,7 +83,7 @@ $dao["activity"]["publishActivity"]=function(userid,objActivity,funcCb){
         remarks:0
     }
     var objInserted=_.extend(objDefaultInserted,objActivity)
-    if(objInserted["type"==1]){
+    if(objInserted["type"]==1){
         objInserted["status"]=0
     }else{
         objInserted["status"]=2
@@ -94,6 +94,7 @@ $dao["activity"]["publishActivity"]=function(userid,objActivity,funcCb){
             funcCb({errcode:1000},null)
         }else{
             objInserted["_id"]=cResult.insertedId
+            delete objInserted["integral"]
             funcCb(null,objInserted)
         }
     })
@@ -131,9 +132,10 @@ $dao["activity"]["cancelActivity"]=function(userid,activityid,funcCb){
 }
 
 $dao["activity"]["editActivity"]=function(userid,activityid,objUpdated,funcCb){
+    req.junkfiles=[objUpdated["img_logo"],objUpdated["img_poster"]]
     async.waterfall([
         function(cb){
-            objActivityColl.findOne({_id:activityid},{fields:{_id:0,_id_publish_user:1,status:1}},function(err,rResult){
+            objActivityColl.findOne({_id:activityid},{fields:{_id:0,_id_publish_user:1,status:1,img_logo:1,img_poster:1}},function(err,rResult){
                 if(err){
                     cb({errcode:1001},null)
                 }else if(!rResult){
@@ -143,7 +145,7 @@ $dao["activity"]["editActivity"]=function(userid,activityid,objUpdated,funcCb){
                 }else if(rResult["status"]==4 || rResult["status"]==6){
                     cb({errcode:15003})
                 }else{
-                    cb(null,null)
+                    cb(null,rResult)
                 }
             })
         },
@@ -152,6 +154,7 @@ $dao["activity"]["editActivity"]=function(userid,activityid,objUpdated,funcCb){
                 if(err){
                     cb({errcode:1002},null)
                 }else{
+                    req.junkfiles=[lastResult["img_logo"],lastResult["img_poster"]]
                     cb(null,null)
                 }
             })
@@ -284,7 +287,6 @@ $dao["activity"]["syncActivities"]=function(userid,obj,funcCb){
 
 $dao["activity"]["details"]=function(userid,activityid,funcCb){
     var objProjection={
-       _id_publish_user:0,
        dt_begin:0,
        dt_end:0,
        _id_check_user:0,
@@ -316,9 +318,15 @@ $dao["activity"]["details"]=function(userid,activityid,funcCb){
         if(err){
             funcCb(err,null)
         }else if(!pResults[1]){
+            if(pResults[0]["type"]==0){
+                delete pResults["_id_publish_user"]
+            }
             pResults[0]["userstatus"]=-1
             funcCb(null,pResults[0])
         }else{
+            if(pResults[0]["type"]==0){
+                delete pResults["_id_publish_user"]
+            }
             pResults[0]["userstatus"]=pResults[1]["status"]
             funcCb(null,pResults[0])
         }
@@ -487,7 +495,7 @@ function _activityStart(activityid){
     }
 }
 
-function _canSininOrComplete(userid,activityid){
+function _canSignin(userid,activityid){
     return function (lastResult,cb) {
         objActivityEnrollmentColl.findOne({_id_activity:activityid,_id_user:userid},{fields:{_id:0,status:1}},function(err,rResult){
             if(err){
@@ -501,10 +509,24 @@ function _canSininOrComplete(userid,activityid){
     }
 }
 
+function _canComplement(userid,activityid){
+    return function (lastResult,cb) {
+        objActivityEnrollmentColl.findOne({_id_activity:activityid,_id_user:userid},{fields:{_id:0,status:1}},function(err,rResult){
+            if(err){
+                cb({errcode:1001},null)
+            }else if(!rResult || rResult["status"]!=1){
+                cb({errcode:15014},null)
+            }else{
+                cb(null,null)
+            }
+        })
+    }
+}
+
 $dao["activity"]["signin"]=function(userid,activityid,funcCb){
     async.waterfall([
         _activityStart(activityid),
-        _canSininOrComplete(userid,activityid),
+        _canSignin(userid,activityid),
         function(lastResult,cb){
             objActivityEnrollmentColl.updateOne({_id_activity:activityid,_id_user:userid},{$set:{status:1},$currentDate:{dt_participant:true}},function(err,uResult){
                 if(err){
@@ -531,7 +553,7 @@ $dao["activity"]["signin"]=function(userid,activityid,funcCb){
 $dao["activity"]["complete"]=function(userid,activityid,funcCb){
     async.waterfall([
         _activityStart(activityid),
-        _canSininOrComplete(userid,activityid),
+        _canComplement(userid,activityid),
         function(lastResult,cb){
             objActivityEnrollmentColl.updateOne({_id_activity:activityid,_id_user:userid},{$set:{status:2},$currentDate:{dt_complete:true}},function(err,uResult){
                 if(err){
@@ -595,6 +617,10 @@ $dao["activity"]["publishRemark"]=function(userid,activityid,objRemark,funcCb){
         function(lastResult,cb){
             objRemark["_id_user"]=userid
             objRemark["dt_publish"]=new Date()
+            objRemark["_id_activity"]=activityid
+            if(objRemark["_id_to"]){
+                objRemark["_id_to"]=new ObjectID(objRemark["_id_to"])
+            }
             objActivityRemarkColl.insertOne(objRemark,function(err,cResult){
                 if(err){
                     cb({errcode:1000},null)
@@ -604,7 +630,7 @@ $dao["activity"]["publishRemark"]=function(userid,activityid,objRemark,funcCb){
             })
         },
         function(lastResult,cb){
-            objActivityColl.findOneAndUpdate({_id:activityid},{$inc:{remarks:1}},{projects:{_id:0,remarks:1},returnOriginal:false},function(err,uResult){
+            objActivityColl.findOneAndUpdate({_id:activityid},{$inc:{remarks:1}},{projection:{_id:0,remarks:1},returnOriginal:false},function(err,uResult){
                 if(err){
                     cb({errcode:1002},null)
                 }else{

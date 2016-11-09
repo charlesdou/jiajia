@@ -6,17 +6,17 @@ var ObjectID=require("mongodb").ObjectID
 $load("MyUtil.js")
 var path=require("path")
 var arrRoutes=[
-    ["post","","$auth","$form","$isObjectBody","$body",publishActivity],
-    ["put",":_id_activity","$auth","$form","$isObjectBody","$body","$params",updateActivity],
-    ["delete",":_id_activity","$auth","$params",cancelActivity],
-    ["put","audit/:_id_activity","$auth","$isObjectBody","$body","$params",checkActivity],
-    ["put","begin/:_id_activity","$auth","$params",beginActivity],
-    ["put","end/:_id_activity","$auth","$params",endActivity],
-    ["put","endenroll/:_id_activity","$auth","$params",endEnroll],
+    ["post","","$form","$isObjectBody",publishActivity],
+    ["put",":_id_activity","$form","$isObjectBody","$body","$params",updateActivity],
+    ["delete",":_id_activity","$params",cancelActivity],
+    ["put","audit/:_id_activity","$isObjectBody","$body","$params",checkActivity],
+    ["put","begin/:_id_activity","$params",beginActivity],
+    ["put","end/:_id_activity","$params",endActivity],
+    ["put","endenroll/:_id_activity","$params",endEnroll],
     ["post","sync","$auth","$isObjectBody","$body",syncActivities],
-    ["get","details/:_id_activity","$auth","$params",details],
-    ["post","sync/remarks/:_id_activity","$auth","$isObjectBody","$body","$params",syncRemarks],
-    ["post","sync/users/:_id_activity","$auth","$isObjectBody","$body","$params",syncUsers]
+    ["get","details/:_id_activity","$params",details],
+    ["post","sync/remarks/:_id_activity","$isObjectBody","$body","$params",syncRemarks],
+    ["post","sync/users/:_id_activity","$isObjectBody","$body","$params",syncUsers]
 ]
 
 function ActivityController(arrRoutes,strRoutePrefix,strViewPrefix,strSubApp){

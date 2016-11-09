@@ -1,0 +1,263 @@
+基础URL：http://www.sunrisin.com:8088
+
+统一访问错误回复
+{
+	"errcode":<int>,     错误码
+	"errmsg":<string>     错误描述
+}
+
+公共头:{
+	x-ua:<int>     1 iPhone 2 iPad 3 android-phone 4 android-pad 5 other
+	x-sid:<string>     用户sessionid
+}
+
+path前缀: activity
+
+{
+  "description": "用户完成该活动",
+  "protocol": "",
+  "method": "put",
+  "path": "complement/:_id_activity",     //活动ID
+  "params": {
+    "_id_activity": "582327df120f6e1c3f20e5df"     //活动ID
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "completes": 1
+  }
+}
+
+
+{
+  "description": "查看某个活动详情",
+  "protocol": "",
+  "method": "get",
+  "path": "details/:_id_activity",
+  "params": {
+    "_id_activity": "582327df120f6e1c3f20e5df"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "_id": "582327df120f6e1c3f20e5df",     //活动ID
+    "type": 1,     //活动类型（由企业用户发布还是由后台发布） 0：后台发布 1：企业用户发布
+    "_id_publish_user": "57e1530abef390d05e294797"     //活动发布者ID
+    "title": "第一条活动",     //活动标题
+    "img_logo": "/home/57e1530abef390d05e294797/20161109/upload_5834a09f1ff57f22392b367bc8098fd5.jpg",       //活动logo
+    "img_poster": "/home/57e1530abef390d05e294797/20161109/upload_0fd5dcb4146ef1478756db633063e6b2.jpg",     //活动海报
+    "description": "修改下活动描述",     //活动内容
+    "dt_publish": 1478698937360,     //发布时间
+    "applies": 0,     //活动报名人数
+    "participants": 0,     //活动参加人数
+    "completes": 0,     //完成活动人数
+    "min_applies": 10,     //活动最少要求报名人数
+    "remarks": 0,     //活动评论数
+    "dt_end_enrollment": 1481385600000,     //活动报名截止时间
+    "status": 0,     //状态 0：待审核 1：审核失败 2：正在报名 3：报名截止 4：活动开始 5：活动结束 6：活动被取消
+    "userstatus": -1     //该用户对该活动的状态   -1：尚未报名 1：已经报名 2：已经签到 3：完成活动
+  }
+}
+
+
+{
+  "description": "用户签到",
+  "protocol": "",
+  "method": "put",
+  "path": "signin/:_id_activity",
+  "params": {
+    "_id_activity": "582327df120f6e1c3f20e5df"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "participants": 1
+  }
+}
+
+
+{
+  "description": "用户报名活动",
+  "protocol": "",
+  "method": "post",
+  "path": "enrollment/:_id_activity",
+  "params": {
+    "_id_activity": "582327df120f6e1c3f20e5df"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "applies": 1
+  }
+}
+
+
+{
+  "description": "企业用户取消发布的活动",
+  "protocol": "",
+  "method": "delete",
+  "path": ":_id_activity",
+  "params": {
+    "_id_activity": "582327df120f6e1c3f20e5df"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}
+
+
+{
+  "description": "用户取消对该活动的报名",
+  "protocol": "",
+  "method": "delete",
+  "path": "enrollment/:_id_activity",
+  "params": {
+    "_id_activity": "582327df120f6e1c3f20e5df"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "applies": 0
+  }
+}
+
+
+{
+  "description": "删除评论",
+  "protocol": "",
+  "method": "delete",
+  "path": "remark/:_id_remark",
+  "params": {
+    "_id_remark": "5823497c001719250cd1faaf"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "remarks": 0
+  }
+}
+
+
+{
+  "description": "企业用户发布活动",
+  "protocol": "",
+  "method": "post",
+  "path": "",
+  "params": {},
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "form",
+  "req_body": {
+    "type": 1,
+    "title": "第一条活动",
+    "img_logo": "./multimedia/1.jpg",
+    "img_poster": "./multimedia/2.jpg",
+    "description": "调试而已，不要放在心上",
+    "dt_end_enrollment": 1481385600000,
+    "min_applies": 10
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {     //该接口返回的字段可以参考查看活动详情接口
+    "type": 1,
+    "_id_publish_user": "57e1530abef390d05e294797",
+    "title": "第一条活动",
+    "img_logo": "/home/57e1530abef390d05e294797/20161109/upload_503484abf9a0827ccdb3724fff366c78.jpg",
+    "img_poster": "/home/57e1530abef390d05e294797/20161109/upload_fd0c1ecc599e0f98326029f3c342f890.jpg",
+    "description": "调试而已，不要放在心上",
+    "dt_publish": 1478698937360,
+    "applies": 0,
+    "participants": 0,
+    "completes": 0,
+    "min_applies": 10,
+    "remarks": 0,
+    "dt_end_enrollment": 1481385600000,
+    "status": 0,
+    "_id": "582327df120f6e1c3f20e5df"
+  }
+}
+
+
+{
+  "description": "发布评论",
+  "protocol": "",
+  "method": "post",
+  "path": "remark/:_id_activity",
+  "params": {
+    "_id_activity": "582327df120f6e1c3f20e5df"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "content": "abcdefg"
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "_id": "5823497c001719250cd1faaf",
+    "remarks": 1
+  }
+}
+
+
+{
+  "description": "修改活动",
+  "protocol": "",
+  "method": "put",
+  "path": ":_id_activity",
+  "params": {
+    "_id_activity": "582327df120f6e1c3f20e5df"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "form",
+  "req_body": {
+    "description": "修改下活动描述",     //活动内容
+    "img_logo": "./multimedia/2.jpg",     //活动logo
+    "img_poster": "./multimedia/1.jpg"     //活动还报
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}
+
+

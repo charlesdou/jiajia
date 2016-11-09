@@ -1,0 +1,21 @@
+{
+  "description": "修改活动",
+  "protocol": "",
+  "method": "put",
+  "path": ":_id_activity",
+  "params": {
+    "_id_activity": "582327df120f6e1c3f20e5df"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "form",
+  "req_body": {
+    "description": "修改下活动描述",
+    "img_logo": "./multimedia/2.jpg",
+    "img_poster": "./multimedia/1.jpg"
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": ""
+}

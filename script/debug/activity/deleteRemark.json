@@ -1,0 +1,19 @@
+{
+  "description": "删除评论",
+  "protocol": "",
+  "method": "delete",
+  "path": "remark/:_id_remark",
+  "params": {
+    "_id_remark": "5823497c001719250cd1faaf"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "remarks": 0
+  }
+}

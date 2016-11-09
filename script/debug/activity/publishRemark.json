@@ -1,0 +1,22 @@
+{
+  "description": "发布评论",
+  "protocol": "",
+  "method": "post",
+  "path": "remark/:_id_activity",
+  "params": {
+    "_id_activity": "582327df120f6e1c3f20e5df"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {
+    "content": "abcdefg"
+  },
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "_id": "5823497c001719250cd1faaf",
+    "remarks": 1
+  }
+}

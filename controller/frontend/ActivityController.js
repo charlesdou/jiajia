@@ -6,15 +6,15 @@ var ObjectID=require("mongodb").ObjectID
 $load("MyUtil.js")
 var path=require("path")
 var arrRoutes=[
-    ["post","","$auth","$form","$isObjectBody","$body",publishActivity],
-    ["put",":_id_activity","$auth","$form","$isObjectBody","$body","$params",updateActivity],
+    ["post","","$auth","$form","$isObjectBody",publishActivity],
+    ["put",":_id_activity","$auth","$form","$isObjectBody","$params",updateActivity],
     ["delete",":_id_activity","$auth","$params",cancelActivity],
-    ["put","enrollment/:_id_activity","$auth","$params",activityEnrollment],
+    ["post","enrollment/:_id_activity","$auth","$params",activityEnrollment],
     ["delete","enrollment/:_id_activity","$auth","$params",cancelEnrollment],
     ["put","signin/:_id_activity","$auth","$params",activitySignin],
     ["put","complement/:_id_activity","$auth","$params",activityComplete],
-    ["post","remarks/:_id_activity","$auth","$isObjectBody","$body","$params",publishRemark],
-    ["delete","remarks/:_id_remark","$auth","$params",deleteRemark],
+    ["post","remark/:_id_activity","$auth","$isObjectBody","$body","$params",publishRemark],
+    ["delete","remark/:_id_remark","$auth","$params",deleteRemark],
     ["post","sync","$auth","$isObjectBody","$body",syncActivities],
     ["get","details/:_id_activity","$auth","$params",details],
     ["post","sync/remarks/:_id_activity","$auth","$isObjectBody","$body","$params",syncRemarks]
@@ -54,15 +54,15 @@ function activityComplete(req,res,next){
 }
 
 function publishRemark(req,res,next){
-    $dao["activity"]["publishRemark"](req.ocid,req.params["_id_activity"],_.bind(res.reply,res))
+    $dao["activity"]["publishRemark"](req.ocid,req.params["_id_activity"],req.body,_.bind(res.reply,res))
 }
 
 function deleteRemark(req,res,next){
-    $dao["activity"]["deleteRemark"](req.ocid,req.params["_id_activity"],_.bind(res.reply,res))
+    $dao["activity"]["deleteRemark"](req.ocid,req.params["_id_remark"],_.bind(res.reply,res))
 }
 
 function syncActivities(req,res,next){
-    $dao["activity"]["syncActivities"](req.ocid,req.body_.bind(res.reply,res))
+    $dao["activity"]["syncActivities"](req.ocid,req.body,_.bind(res.reply,res))
 }
 
 function details(req,res,next){

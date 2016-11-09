@@ -1,0 +1,33 @@
+{
+  "description": "查看某个活动详情",
+  "protocol": "",
+  "method": "get",
+  "path": "details/:_id_activity",
+  "params": {
+    "_id_activity": "582327df120f6e1c3f20e5df"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {
+    "_id": "582327df120f6e1c3f20e5df",
+    "type": 1,
+    "title": "第一条活动",
+    "img_logo": "/home/57e1530abef390d05e294797/20161109/upload_5834a09f1ff57f22392b367bc8098fd5.jpg",
+    "img_poster": "/home/57e1530abef390d05e294797/20161109/upload_0fd5dcb4146ef1478756db633063e6b2.jpg",
+    "description": "修改下活动描述",
+    "dt_publish": 1478698937360,
+    "applies": 0,
+    "participants": 0,
+    "completes": 0,
+    "min_applies": 10,
+    "remarks": 0,
+    "dt_end_enrollment": 1481385600000,
+    "status": 0,
+    "userstatus": -1
+  }
+}

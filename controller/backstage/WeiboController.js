@@ -6,7 +6,7 @@ var ObjectID=require("mongodb").ObjectID
 $load("MyUtil.js")
 var path=require("path")
 var arrRoutes=[
-    []
+    ["get","","$auth",getMainPage]
 ]
 
 function WeiboController(arrRoutes,strRoutePrefix,strViewPrefix,strSubApp){
@@ -14,6 +14,8 @@ function WeiboController(arrRoutes,strRoutePrefix,strViewPrefix,strSubApp){
 }
 util.inherits(WeiboController,Controller)
 
+function getMainPage(req,res,next){
 
+}
 
 module.exports=new WeiboController(arrRoutes,"weibo","weibo","")
