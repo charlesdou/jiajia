@@ -35,6 +35,12 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
-
+*~
+*.~
+.*
 .idea/
-view/static/
+log/
+view/static/backstage/home/
+view/static/frontend/home/
+**/npm-debug.log
+!.gitignore
