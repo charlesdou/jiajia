@@ -15,7 +15,7 @@ var arrRoutes=[
     ["put","complement/:_id_activity","$auth","$params",activityComplete],
     ["post","remark/:_id_activity","$auth","$isObjectBody","$body","$params",publishRemark],
     ["delete","remark/:_id_remark","$auth","$params",deleteRemark],
-    ["post","sync","$auth","$isObjectBody","$body",syncActivities],
+    ["post","sync","$auth",syncActivities],
     ["get","details/:_id_activity","$auth","$params",details],
     ["post","sync/remarks/:_id_activity","$auth","$isObjectBody","$body","$params",syncRemarks]
 ]
@@ -62,6 +62,7 @@ function deleteRemark(req,res,next){
 }
 
 function syncActivities(req,res,next){
+    req.body= req.body || {}
     $dao["activity"]["syncActivities"](req.ocid,req.body,_.bind(res.reply,res))
 }
 

@@ -10,6 +10,10 @@ var objActivityColl=$objMongoColls["maindb"]["activity"]
 var objActivityEnrollmentColl=$objMongoColls["maindb"]["activity_enrollment"]
 var objActivityRemarkColl=$objMongoColls["maindb"]["activity_remark"]
 
+const ACTIVITY_PAGESIZE=55
+const REMARK_PAGESIZE=100
+
+
 /*
  activity:
  {
@@ -281,10 +285,6 @@ $dao["activity"]["end"]=function(activityid,funcCb){
     })
 }
 
-$dao["activity"]["syncActivities"]=function(userid,obj,funcCb){
-
-}
-
 $dao["activity"]["details"]=function(userid,activityid,funcCb){
     var objProjection={
        dt_begin:0,
@@ -333,12 +333,120 @@ $dao["activity"]["details"]=function(userid,activityid,funcCb){
     })
 }
 
-$dao["activity"]["syncRemarks"]=function(userid,activityid,obj,funcCb){
-    
+$dao["activity"]["syncActivities"]=function(userid,obj,funcCb){
+    var objOption={
+        coll:"activity",
+        tsName:"dt_publish",
+        syncCount:ACTIVITY_PAGESIZE,
+        extraFilter:{
+            status:{$ne:6}
+        },
+        projection:{
+            integral:0
+        }
+    }
+    objOption=_.extend(objOption,obj)
+
+    async.waterfall([
+        function(cb){
+            $dao["cmn"]["upOrDownGestureSync"](objOption,function(errcode,rResults){
+                if(errcode!=0){
+                    cb({errcode:errcode},null)
+                }else{
+                    cb(null,rResults)
+                }
+            })
+        },
+        function(lastResults,cb){
+            var arrActivityIDs=_.map(lastResults,function(item){
+                return item["_id"]
+            })
+            objActivityEnrollmentColl.find({_id_activity:{$in:arrActivityIDs},_id_user:userid}).project({_id:0,_id_activity:1,status:1}).toArray(function(err,rResults){
+                if(err){
+                    cb({errcode:1001},null)
+                }else{
+                    var objMapUserState=_.indexBy(rResults,function(item){
+                        return item["_id_activity"].toHexString()
+                    })
+                    for(var i in lastResults){
+                        var objTmp=lastResults[i]
+                        var strActivityID=objTmp["_id"].toHexString()
+                        var objUserStatus=objMapUserState[strActivityID]
+                        objTmp["userstatus"]=(objUserStatus && objUserStatus["status"]) || -1
+                    }
+                    cb(null,lastResults)
+                }
+            })
+        }
+    ],funcCb)
 }
 
-$dao["activity"]["activityUsers"]=function(userid,activityid,obj,funcCb){
-    
+$dao["activity"]["syncRemarks"]=function(userid,activityid,obj,funcCb){
+    var objOptions={
+        tsName:"activity_remark",
+        syncCount:REMARK_PAGESIZE,
+        extraFilter:{_id_activity:activityid},
+        descending:false
+    }
+    objOptions=_.extend(objOptions,obj)
+
+    async.waterfall([
+        function(cb){
+            $dao["cmn"]["upOrDownGestureSync"](objOptions,function(errcode,rResults){
+                if(errcode!=0){
+                    cb({errcode:errcode},null)
+                }else{
+                    cb(null,rResults)
+                }
+            })
+        },
+        function(lastResults,cb){
+            var objUserIDs={}
+            var arrAllUserIDs=[]
+            for(var i in lastResults){
+                var objTmp=lastResults[i]
+                if(objTmp["_id_user"]){
+                    objUserIDs[objTmp["_id_user"].toHexString()]=1
+                }
+                if(objTmp["_id_to"]){
+                    objUserIDs[objTmp["_id_to"].toHexString()]=1
+                }
+            }
+            for(var strKey in objUserIDs){
+                arrAllUserIDs=new ObjectID(strKey)
+            }
+            $dao["user"]["queryUserInfos"](arrAllUserIDs,150,function(errcode,objMapUsers){
+                if(errcode!=0){
+                    cb({errcode:errcode},null)
+                }else{
+                    cb(null,lastResults,objMapUsers)
+                }
+            })
+        },
+        function(arrRemarks,objMapUserInfo,cb){
+            for(var i in arrRemarks){
+                var objRemark=arrRemarks[i]
+                if(!objRemark["_id_to"]){
+                    objRemark["_id_to"]=""
+                }
+                var strRemarkUserID=(objRemark["_id_user"] && objRemark["_id_user"].toHexString()) || ""
+                var strRemarkToID=(objRemark["_id_to"] && objRemark["_id_to"].toHexString()) || ""
+                objRemark["user_nickname"]=""
+                objRemark["img_user_headportrait"]=""
+                objRemark["to_nickname"]=""
+                objRemark["img_to_headportrait"]=""
+                if(strRemarkUserID){
+                    objRemark["user_nickname"]=objMapUserInfo[strRemarkUserID]["nickname"]
+                    objRemark["img_user_headportrait"]=objMapUserInfo[strRemarkUserID]["img_headportrait"]
+                }
+                if(strRemarkToID){
+                    objRemark["to_nickname"]=objMapUserInfo[strRemarkToID]["nickname"]
+                    objRemark["img_to_headportrait"]=objMapUserInfo[strRemarkToID]["img_headportrait"]
+                }
+            }
+            cb(null,arrRemarks)
+        }
+    ],funcCb)
 }
 
 $dao["activity"]["onePageActivities"]=function(userid,intPage,intPerpage,obj,funcCb){

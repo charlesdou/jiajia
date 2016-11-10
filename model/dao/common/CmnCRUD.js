@@ -37,7 +37,8 @@ options:{
     syncCount:100,
     extraFilter:{},
     projection:{},
-    down:true
+    down:true,
+    descending:true
 }
 */
 $dao["cmn"]["upOrDownGestureSync"]=function(objOptions,funcCb){
@@ -49,18 +50,39 @@ $dao["cmn"]["upOrDownGestureSync"]=function(objOptions,funcCb){
         var strTsName=objOptions["tsName"] || "dt_publish"
         var dtTs=objOptions["dt"]
         var arrAlreadySynced=(_.isArray(objOptions["alreadySynced"]) && objOptions["alreadySynced"]) || []
+        var intSyncCount=(_.isNumber(objOptions["syncCount"]) && objOptions["syncCount"]) || 100
         var objExtraFilter=(_.isObject(objOptions["extraFilter"]) && objOptions["extraFilter"]) || {}
-        var isDown=objOptions["down"]
-        if(isDown){
-            objExtraFilter[strTsName]={$gte:dtTs}
-        }else{
-            objExtraFilter[strTsName]={$lte:dtTs}
+        var objProj=(_.isObject(objOptions["projection"]) && objOptions["projection"]) || {}
+        var isDown=true
+        if(objOptions["down"]===false){
+            isDown=false
         }
-        objExtraFilter["_id"]={$nin:arrAlreadySynced}
+        var descending=true
+        if(objOptions["descending"]===false){
+            descending=false
+        }
+        
+
+        if(isDown){
+            dtTs=new Date()
+            if(!descending){
+                dtTs.setTime(0)
+            }
+        }
+        if(descending){
+            objExtraFilter[strTsName]={$lte:dtTs}
+        }else{
+            objExtraFilter[strTsName]={$gte:dtTs}
+        }
+        if(arrAlreadySynced.length!=0){
+           objExtraFilter["_id"]={$nin:arrAlreadySynced} 
+        }
+        
         var objSort={}
         objSort[strTsName]=-1
-        var objProj=(_.isObject(objOptions["projection"]) && objOptions["projection"]) || {}
-        var intSyncCount=(_.isNumber(objOptions["syncCount"]) && objOptions["syncCount"]) || 100
+        if(!descending){
+            objSort[strTsName]=1
+        }
 
         var objCursor=$objMongoColls[strDb][strColl].find(objExtraFilter)
         if(objProj && _.isObject(objProj) && _.keys(objProj)!=0){
