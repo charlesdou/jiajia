@@ -98,6 +98,84 @@ $dao["cmn"]["upOrDownGestureSync"]=function(objOptions,funcCb){
     }
 }
 
+/*
+options:{
+    db:"maindb",
+    coll:"",
+    page:1,
+    pagesize:35,
+    tsName:"dt_publish",
+    descending:true,
+    objFilter:{},
+    projection:{}
+}
+ */
+$dao["cmn"]["syncPage"]=function(objOptions,funcCb){
+    var strDb=objOptions["db"] || ""
+    var strColl=objOptions["coll"] || ""
+    if(!strColl){
+        funcCb(1056,null)
+        return
+    }
+    var intPage=objOptions["page"] || 1
+    var intPagesize=objOptions["pagesize"] || 35
+    var strTsName=objOptions["tsName"] || "dt_publish"
+    var descending=true
+    if(objOptions["descending"]===false){
+        descending=false
+    }
+
+    var objFilter=objOptions["objFilter"] || {}
+    var objProjection=objOptions["projection"] || {}
+
+    var objColl=$objMongoColls[strDb][strColl]
+    var objCursor=objColl.find(objFilter)
+    if(objProjection && _.keys(objProjection).length!=0){
+        objCursor=objCursor.project(objProjection)
+    }
+    var objSort={}
+    objSort[strTsName]=-1
+    if(descending===false){
+        objSort[strTsName]=1
+    }
+    objCursor=objCursor.sort(objSort)
+
+    var intSkip=parseInt((intPage-1)*35)
+    var intCount=intPagesize
+
+    async.waterfall([
+        function(cb){
+            objColl.count(objFilter,function(err,intCount){
+                if(err){
+                   cb({errcode:1001},null)
+                }else{
+                   var intTmp=intCount%intPagesize
+                   var intTmp2=parseInt(intCount/intPagesize)
+                   if(intTmp!=0){
+                       intTmp2++
+                   }
+                   cb(null,intTmp2)
+                }
+            })
+        },
+        function(totalPage,cb){
+            objCursor.skip(intSkip).limit(intCount).toArray(function(err,rResults){
+                if(err){
+                    cb({errcode:1001},null)
+                }else{
+                    cb(null,{totalPage:totalPage,data:rResults})
+                }
+            })
+        }
+    ],function(err,wResult){
+       if(err){
+           funcCb(err["errcode"],null)
+       }else{
+           funcCb(null,wResult)
+       }
+    })
+}
+
 $dao["cmn"]["onepage"]=function(strDbName,strCollectionName,perPage,page,objFilter,objField,objSort,funcCb){
     async.waterfall([
         function(cb){

@@ -33,12 +33,10 @@
      "badge":[
        {"binding.collection":1},
        {"_id":1,"binding.collection":1},
-       {"type":1},
-       {"name":1},
+       {"subject":1},
+       {"origin":1},
        {"dt_publish":1},
-       {"dt_publish":-1},
-       {"dt_sync":1},
-       {"dt_sync:":-1}
+       {"dt_publish":-1}
      ],
      "donation_usage":[
        {"_id_donation":1},

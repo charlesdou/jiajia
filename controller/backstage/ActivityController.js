@@ -13,10 +13,12 @@ var arrRoutes=[
     ["put","begin/:_id_activity","$params",beginActivity],
     ["put","end/:_id_activity","$params",endActivity],
     ["put","endenroll/:_id_activity","$params",endEnroll],
-    ["post","sync","$auth","$isObjectBody","$body",syncActivities],
+    ["get",":page/:perpage","$auth","$isObjectBody","$body",syncActivities],
     ["get","details/:_id_activity","$params",details],
-    ["post","sync/remarks/:_id_activity","$isObjectBody","$body","$params",syncRemarks],
-    ["post","sync/users/:_id_activity","$isObjectBody","$body","$params",syncUsers]
+    ["get","remarks/:_id_activity/:page/:perpage","$isObjectBody","$body","$params",syncRemarks],
+    ["get","users/:_id_activity/:page/:perpage","$isObjectBody","$body","$params",syncUsers],
+    ["post",":_id_activityid/badge","$form","$isObjectBody","$params",editBadge],
+    ["put",":_id_activityid/badge/:_id_badge","$form","$isObjectBody","$params",editBadge]
 ]
 
 function ActivityController(arrRoutes,strRoutePrefix,strViewPrefix,strSubApp){
@@ -53,7 +55,7 @@ function endEnroll(req,res,next){
 }
 
 function syncActivities(req,res,next){
-	$dao["activity"]["onePageActivities"](req.ocid,req.body["page"],req.body["perpage"],req.body,_.bind(res.reply,res))
+	$dao["activity"]["onePageActivities"](req.ocid,parseInt(req.params["page"]),parseInt(req.params["perpage"]),req.query,_.bind(res.reply,res))
 }
 
 function details(req,res,next){
@@ -61,11 +63,15 @@ function details(req,res,next){
 }
 
 function syncRemarks(req,res,next){
-	$dao["activity"]["onePageRemarks"](req.ocid,req.params["_id_activity"],req.body["page"],req.body["perpage"],req.body,_.bind(res.reply,res))
+	$dao["activity"]["onePageRemarks"](req.ocid,req.params["_id_activity"],parseInt(req.params["page"]),parseInt(req.params["perpage"]),req.query,_.bind(res.reply,res))
 }
 
 function syncUsers(req,res,next){
-	$dao["activity"]["onePageUsers"](req.ocid,req.body["page"],req.body["perpage"],req.body,_.bind(res.reply,res))
+	$dao["activity"]["onePageUsers"](req.ocid,req.params["_id_activity"],parseInt(req.params["page"]),parseInt(req.params["perpage"]),req.query,_.bind(res.reply,res))
+}
+
+function editBadge(req,res,next){
+    $dao["activity"]["editBadge"](req.ocid,req.params["_id_activity"],req.params["_id_badge"],req.body,_.bind(res.reply,res))
 }
 
 module.exports=new ActivityController(arrRoutes,"activity","activity","")

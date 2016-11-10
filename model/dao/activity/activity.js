@@ -9,6 +9,7 @@ var _s=require("underscore.string")
 var objActivityColl=$objMongoColls["maindb"]["activity"]
 var objActivityEnrollmentColl=$objMongoColls["maindb"]["activity_enrollment"]
 var objActivityRemarkColl=$objMongoColls["maindb"]["activity_remark"]
+var objBadgeColl=$objMongoColls["maindb"]["badge"]
 
 const ACTIVITY_PAGESIZE=55
 const REMARK_PAGESIZE=100
@@ -60,13 +61,15 @@ const REMARK_PAGESIZE=100
  badge:
  {
     _id:<ObjectID>,
-    type:"活动徽章",
-    name:"",
+    img_logo:""
+    subject:"活动徽章",
+    origin:"",
     dt_create:<Datetime>,
     binding:{
         "collection":"activity",
         "_id":<ObjectID>
-    }
+    },
+    _id_publish_user:<ObjectID>
  }
  */
 
@@ -166,6 +169,49 @@ $dao["activity"]["editActivity"]=function(userid,activityid,objUpdated,funcCb){
     ],function(err,wResult){
         funcCb(err,wResult)
     })
+}
+
+$dao["activity"]["editBadge"]=function(userid,activityid,badgeid,objUpdated,funcCb){
+    if(!badgeid){
+        objUpdated["_id"]=new ObjectID()
+    }else{
+        objUpdated["_id"]=badgeid
+    }
+    objUpdated["subject"]=objUpdated["subject"] || "活动徽章"
+    objUpdated["dt_publish"]=new Date()
+    objUpdated["_id_publish_user"]=userid
+    objUpdated["binding"]={collection:"activity",_id:activityid}
+    var strOldImg=""
+
+    async.waterfall([
+        function(cb){
+            objBadgeColl.findOneAndUpdate({_id:objUpdated["_id"]},{$set:objUpdated},{projection:{img_logo:1},upsert:true},function(err,uResult){
+                if(err){
+                    req.junkfiles=[objUpdated["img_logo"]]
+                    cb({errcode:1002},null)
+                }else{
+                    if(uResult && uResult["value"]){
+                        strOldImg=uResult["value"]["img_logo"]
+                    }
+                    req.junkfiles=[strOldImg]
+                    cb(null,null)
+                }
+            })
+        },
+        function(lastResult,cb){
+            if(!badgeid){
+                objActivityColl.updateOne({_id:objUpdated["_id"]},{$set:{_id_badge:objUpdated["_id"]}},function(err,uResult){
+                    if(err){
+                        cb({errcode:1002},null)
+                    }else{
+                        cb(null,{_id:objUpdated["_id"]})
+                    }
+                })
+            }else{
+                cb(null,{_id:objUpdated["_id"]})
+            }
+        }
+    ],funcCb)
 }
 
 $dao["activity"]["check"]=function(checkuserid,activityid,objCheck,funcCb){
@@ -413,7 +459,7 @@ $dao["activity"]["syncRemarks"]=function(userid,activityid,obj,funcCb){
                 }
             }
             for(var strKey in objUserIDs){
-                arrAllUserIDs=new ObjectID(strKey)
+                arrAllUserIDs.push(new ObjectID(strKey))
             }
             $dao["user"]["queryUserInfos"](arrAllUserIDs,150,function(errcode,objMapUsers){
                 if(errcode!=0){
@@ -449,16 +495,141 @@ $dao["activity"]["syncRemarks"]=function(userid,activityid,obj,funcCb){
     ],funcCb)
 }
 
-$dao["activity"]["onePageActivities"]=function(userid,intPage,intPerpage,obj,funcCb){
-    
+$dao["activity"]["onePageActivities"]=function(userid,intPage,intPerpage,objFilter,funcCb){
+   var objOptions={
+       coll:"activity",
+       page:intPage,
+       pagesize:intPerpage,
+       objFilter:objFilter,
+       projection:{
+           _id_check_user:0,
+           integral:0,
+           dt_begin:0,
+           dt_end:0,
+           dt_end_enrollment:0,
+           img_poster:0
+       }
+   }
+   $dao["cmn"]["syncPage"](objOptions,funcCb)
 }
 
-$dao["activity"]["onePageRemarks"]=function(userid,intPage,intPerpage,obj,funcCb){
-    
+$dao["activity"]["onePageRemarks"]=function(userid,activityid,intPage,intPerpage,objFilter,funcCb){
+    objFilter["_id_activity"]=activityid
+    var objOptions={
+        coll:"activity_remark",
+        page:intPage,
+        pagesize:intPerpage,
+        objFilter:objFilter,
+        descending:false
+    }
+    async.waterfall([
+        function(cb){
+            $dao["cmn"]["syncPage"](objOptions,function(err,rResults){
+                if(err){
+                    cb({errcode:err},null)
+                }else{
+                    cb(null,rResults)
+                }
+            })
+        },
+        function(lastResult,cb){
+            var arrRemarks=lastResult["data"]
+            var objMapUserIDs={}
+            for(var i in arrRemarks){
+                var tmp=arrRemarks[i]
+                if(tmp["_id_user"]){
+                    objMapUserIDs[tmp["_id_user"].toString()]=1
+                }
+                if(tmp["_id_to"]){
+                    objMapUserIDs[tmp["_id_to"].toString()]=1
+                }
+            }
+            var arrUserIDs=[]
+            for(var strKey in objMapUserIDs){
+                arrUserIDs.push(new ObjectID(strKey))
+            }
+            $dao["user"]["queryUserInfos"](arrUserIDs,150,function(errcode,objMapUserInfo){
+                if(errcode!=0){
+                    cb({errcode:errcode},null)
+                }else{
+                    cb(null,lastResult,objMapUserInfo)
+                }
+            })
+        },
+        function(objPageData,objMapUserInfo,cb){
+            var arrRemarks=objPageData["data"]
+            for(var i in arrRemarks){
+                var tmp=arrRemarks[i]
+                var strUserID=(tmp["_id_user"] && tmp["_id_user"].toHexString()) || ""
+                var strToID=(tmp["_id_to"] && tmp["_id_to"].toHexString()) || ""
+                if(strUserID){
+                   tmp["user_nickname"]=objMapUserInfo[strUserID]["nickname"]
+                   tmp["img_user_headportrait"]=objMapUserInfo[strUserID]["img_headportrait"]
+                }
+                if(strToID){
+                    tmp["to_nickname"]=objMapUserInfo[strToID]["nickname"]
+                    tmp["img_to_headportrait"]=objMapUserInfo[strToID]["img_headportrait"]
+                }
+            }
+            cb(null,objPageData)
+        }
+    ],funcCb)
 }
 
-$dao["activity"]["onePageUsers"]=function(userid,intPage,intPerpage,obj,funcCb){
-    
+$dao["activity"]["onePageUsers"]=function(userid,activityid,intPage,intPerpage,objFilter,funcCb){
+    objFilter["_id_activity"]=activityid
+    var objOptions={
+        coll:"activity_enrollment",
+        page:intPage,
+        pagesize:intPerpage,
+        tsName:"dt_enrollment",
+        descending:false,
+        objFilter:objFilter,
+        projection:{
+            _id:0,
+            _id_activity:0
+        }
+    }
+    async.waterfall([
+        function(cb){
+            $dao["cmn"]["syncPage"](objOptions,function(errcode,rResults){
+                if(errcode!=0){
+                    cb({errcode:errcode},null)
+                }else{
+                    cb(null,rResults)
+                }
+            })
+        },
+        function(lastResult,cb){
+            var arrUserEnrollments=lastResult["data"]
+            var objMapUserIDs={}
+            var arrUserIDs=[]
+            for(var i in arrUserEnrollments){
+                var tmp=arrUserEnrollments[i]
+                objMapUserIDs[tmp["_id_user"].toHexString()]=1
+            }
+            for(var strKey in objMapUserIDs){
+                arrUserIDs.push(new ObjectID(strKey))
+            }
+            $dao["user"]["queryUserInfos"](arrUserIDs,150,function(errcode,objMapUserInfo){
+                if(errcode!=0){
+                    cb({errcode:errcode},null)
+                }else{
+                    cb(null,lastResult,objMapUserInfo)
+                }
+            })
+        },
+        function(allPageData,objMapUserInfo,cb){
+            var arrEnrollUsers=allPageData["data"]
+            for(var i in arrEnrollUsers){
+                var tmp=arrEnrollUsers[i]
+                var strUserID=tmp["_id_user"].toHexString()
+                tmp["user_nickname"]=objMapUserInfo[strUserID]["nickname"]
+                tmp["user_img_headportrait"]=objMapUserInfo[strUserID]["img_headportrait"]
+            }
+            cb(null,allPageData)
+        }
+    ],funcCb)
 }
 
 /*
