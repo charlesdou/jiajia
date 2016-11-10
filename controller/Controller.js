@@ -431,4 +431,20 @@ Controller.prototype.$params=function(req,res,next){
     next()
 }
 
+Controller.prototype.$sync=function (req,res,next) {
+    req.body=req.body || {}
+    var objBody=req.body
+    if(objBody["dt"]){
+        var date=new Date()
+        date.setTime(parseInt(objBody["dt"]))
+        objBody["dt"]=date
+    }
+    if(_.isArray(objBody["alreadySynced"])){
+        for(var i in objBody["alreadySynced"]){
+            objBody["alreadySynced"][i]=new ObjectID(objBody["alreadySynced"][i])
+        }
+    }
+    next()
+}
+
 global.Controller=Controller

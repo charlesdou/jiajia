@@ -15,9 +15,9 @@ var arrRoutes=[
     ["put","complement/:_id_activity","$auth","$params",activityComplete],
     ["post","remark/:_id_activity","$auth","$isObjectBody","$body","$params",publishRemark],
     ["delete","remark/:_id_remark","$auth","$params",deleteRemark],
-    ["post","sync","$auth",syncActivities],
+    ["post","sync","$auth","$sync",syncActivities],
     ["get","details/:_id_activity","$auth","$params",details],
-    ["post","sync/remarks/:_id_activity","$auth","$isObjectBody","$body","$params",syncRemarks]
+    ["post","sync/remarks/:_id_activity","$auth","$sync","$params",syncRemarks]
 ]
 
 function ActivityController(arrRoutes,strRoutePrefix,strViewPrefix,strSubApp){
