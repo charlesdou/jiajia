@@ -7,6 +7,7 @@ var util=require("util")
 var ObjectID=require("mongodb").ObjectID
 
 objBadgeColl=$objMongoColls["maindb"]["badge"]
+objUserBadgeColl=$objMongoColls["maindb"]["user_badge"]
 
 $dao["badge"]["insertOneBadge"]=function(objBadgeInfo,funcCb){
     objBadgeColl.insertOne(objBadgeInfo,function(err,objResult){
@@ -50,6 +51,21 @@ $dao["badge"]["queryOneByID"]=function(strBagdeID,funcCb){
             funcCb(1001,null)
         }else{
             funcCb(0,objResult)
+        }
+    })
+}
+
+$dao["badge"]["grant"]=function(userid,badgeid,funcCb){
+    var objInserted={
+        _id_user:userid,
+        _id_badge:badgeid,
+        dt_achieve:new Date()
+    }
+    objUserBadgeColl.insertOne(objInserted,function(err,cResult){
+        if(err){
+            funcCb({errcode:1000},null)
+        }else{
+            funcCb(null,null)
         }
     })
 }

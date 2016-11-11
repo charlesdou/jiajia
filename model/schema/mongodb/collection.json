@@ -38,6 +38,13 @@
        {"dt_publish":1},
        {"dt_publish":-1}
      ],
+     "user_badge":[
+        {"_id_uesr":1},
+        {"_id_badge":1},
+        {"_id_user":1,"_id_badge":1},
+        {"dt_achieve":1},
+        {"dt_achieve":-1}
+     ],
      "donation_usage":[
        {"_id_donation":1},
        {"dt_publish":1},

@@ -843,11 +843,24 @@ $dao["activity"]["complete"]=function(userid,activityid,funcCb){
             })
         },
         function(lastResult,cb){
-            objActivityColl.findOneAndUpdate({_id:activityid},{$inc:{completes:1}},{projection:{_id:0,completes:1},returnOriginal:false},function(err,uResult){
+            objActivityColl.findOneAndUpdate({_id:activityid},{$inc:{completes:1}},{projection:{_id:0,completes:1,_id_badge:1},returnOriginal:false},function(err,uResult){
                 if(err){
                     cb({errcode:1002},null)
                 }else{
-                    cb(null,uResult["value"])
+                    var badgeid= (uResult && uResult["value"] && uResult["value"]["_id_badge"]) || ""
+                    if(badgeid){
+                        $dao["badge"]["grant"](userid,badgeid,function(err,cResult){
+                            if(err){
+                                cb(err,null)
+                            }else{
+                                delete uResult["value"]["_id_badge"]
+                                cb(null,uResult["value"])
+                            }
+                        })
+                    }else{
+                        delete uResult["value"]["_id_badge"]
+                        cb(null,uResult["value"])
+                    }
                 }
             })
         }
