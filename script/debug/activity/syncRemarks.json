@@ -1,0 +1,17 @@
+{
+  "description": "同步某个活动的评论",
+  "protocol": "",
+  "method": "post",
+  "path": "sync/remarks/:_id_activity",
+  "params": {
+    "_id_activity": "582327df120f6e1c3f20e5df"
+  },
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {}
+}

@@ -1,0 +1,15 @@
+{
+  "description": "同步活动简讯",
+  "protocol": "",
+  "method": "post",
+  "path": "sync",
+  "params": {},
+  "query": {},
+  "headers": {},
+  "cookies": {},
+  "type": "json",
+  "req_body": {},
+  "statusCode": 200,
+  "statusMessage": "OK",
+  "res_body": {}
+}
