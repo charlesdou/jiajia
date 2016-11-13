@@ -53,6 +53,9 @@
      "entrepreneurship_instructor":[
 
      ],
+     "practice":[
+       {"dt_publish":1}
+     ],
      "weibo":[
        {"publish_user":1},
        {"dt_sync":-1},
